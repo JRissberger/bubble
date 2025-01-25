@@ -1,19 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://def1h6ai23y7t"]
+[gd_scene load_steps=19 format=3 uid="uid://def1h6ai23y7t"]
 
 [ext_resource type="Texture2D" uid="uid://bm6mfr2le218k" path="res://Images/red1.png" id="1_lvyfc"]
 [ext_resource type="Texture2D" uid="uid://brrlhofy8wdfy" path="res://Images/bowlPlaceholder.png" id="1_tjiel"]
-[ext_resource type="Script" path="res://Scripts/Objects/oxygen.gd" id="2_vu4ed"]
-[ext_resource type="Script" path="res://Scripts/Objects/xenon.gd" id="2_wf3ta"]
+[ext_resource type="Script" path="res://Scripts/draggable.gd" id="2_wf3ta"]
 [ext_resource type="Texture2D" uid="uid://c50b4i7rfst7s" path="res://Images/red2.jpg" id="3_b6e2o"]
-[ext_resource type="Script" path="res://Scripts/Objects/helium.gd" id="4_8wl30"]
 [ext_resource type="Texture2D" uid="uid://b7gg6mbrei57x" path="res://Images/red3.jpg" id="4_tjb02"]
+[ext_resource type="Script" path="res://Scripts/Objects/Helium.gd" id="5_drskn"]
 [ext_resource type="Script" path="res://Scripts/creator.gd" id="6_rbtkv"]
-[ext_resource type="Script" path="res://Scripts/Objects/water.gd" id="9_gb24p"]
-[ext_resource type="Script" path="res://Scripts/Objects/soap.gd" id="10_1linw"]
-[ext_resource type="Script" path="res://Scripts/Objects/paint.gd" id="11_mjt71"]
-[ext_resource type="Script" path="res://Scripts/Objects/tadpoles.gd" id="12_fkry1"]
-[ext_resource type="Script" path="res://Scripts/Objects/knife.gd" id="13_tjysm"]
-[ext_resource type="Script" path="res://Scripts/Objects/glitter.gd" id="14_fo1qt"]
+[ext_resource type="Script" path="res://Scripts/Objects/Xenon.gd" id="7_w2mp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0as4c"]
 size = Vector2(304.772, 511.271)
@@ -51,7 +45,7 @@ size = Vector2(695.124, 705.882)
 position = Vector2(899, 112)
 scale = Vector2(0.147651, 0.152561)
 texture = ExtResource("1_lvyfc")
-script = ExtResource("2_vu4ed")
+script = ExtResource("2_wf3ta")
 
 [node name="Button" type="Button" parent="Oxygen"]
 self_modulate = Color(1, 1, 1, 0)
@@ -76,7 +70,7 @@ shape = SubResource("RectangleShape2D_0as4c")
 position = Vector2(984, 113)
 scale = Vector2(0.0819777, 0.103531)
 texture = ExtResource("3_b6e2o")
-script = ExtResource("4_8wl30")
+script = ExtResource("2_wf3ta")
 
 [node name="Button" type="Button" parent="Helium"]
 self_modulate = Color(1, 1, 1, 0)
@@ -91,9 +85,10 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="helium" type="Area2D" parent="Helium"]
+[node name="Area2D" type="Area2D" parent="Helium"]
+script = ExtResource("5_drskn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Helium/helium"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Helium/Area2D"]
 position = Vector2(6.09961, 0)
 shape = SubResource("RectangleShape2D_esc8h")
 
@@ -117,6 +112,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="Xenon"]
+script = ExtResource("7_w2mp2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Xenon/Area2D"]
 position = Vector2(0, 1.49268)
@@ -135,13 +131,13 @@ script = ExtResource("6_rbtkv")
 position = Vector2(0.376831, -1.61877)
 shape = SubResource("RectangleShape2D_nwk45")
 
-[node name="Water" type="Sprite2D" parent="."]
+[node name="Liquid1" type="Sprite2D" parent="."]
 position = Vector2(30, 112)
 scale = Vector2(0.147651, 0.152561)
 texture = ExtResource("1_lvyfc")
-script = ExtResource("9_gb24p")
+script = ExtResource("2_wf3ta")
 
-[node name="Button" type="Button" parent="Water"]
+[node name="Button" type="Button" parent="Liquid1"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,19 +150,19 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="Water"]
+[node name="Area2D" type="Area2D" parent="Liquid1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liquid1/Area2D"]
 position = Vector2(-3.38638, 3.27747)
 shape = SubResource("RectangleShape2D_fcvxt")
 
-[node name="Soap" type="Sprite2D" parent="."]
+[node name="Liquid2" type="Sprite2D" parent="."]
 position = Vector2(90, 112)
 scale = Vector2(0.086, 0.089)
 texture = ExtResource("3_b6e2o")
-script = ExtResource("10_1linw")
+script = ExtResource("2_wf3ta")
 
-[node name="Button" type="Button" parent="Soap"]
+[node name="Button" type="Button" parent="Liquid2"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,19 +175,19 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="Soap"]
+[node name="Area2D" type="Area2D" parent="Liquid2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Soap/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liquid2/Area2D"]
 position = Vector2(-11.6278, -11.2361)
 shape = SubResource("RectangleShape2D_puyoj")
 
-[node name="Paint" type="Sprite2D" parent="."]
+[node name="Liquid3" type="Sprite2D" parent="."]
 position = Vector2(175, 112)
 scale = Vector2(0.26, 0.269)
 texture = ExtResource("4_tjb02")
-script = ExtResource("11_mjt71")
+script = ExtResource("2_wf3ta")
 
-[node name="Button" type="Button" parent="Paint"]
+[node name="Button" type="Button" parent="Liquid3"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_top = 0.083
@@ -205,19 +201,19 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="Paint"]
+[node name="Area2D" type="Area2D" parent="Liquid3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paint/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liquid3/Area2D"]
 position = Vector2(-3.8465, 0)
 shape = SubResource("RectangleShape2D_e31g7")
 
-[node name="Tadpoles" type="Sprite2D" parent="."]
+[node name="Other3" type="Sprite2D" parent="."]
 position = Vector2(899, 200)
 scale = Vector2(0.264, 0.273)
 texture = ExtResource("4_tjb02")
-script = ExtResource("12_fkry1")
+script = ExtResource("2_wf3ta")
 
-[node name="Button" type="Button" parent="Tadpoles"]
+[node name="Button" type="Button" parent="Other3"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_right = 0.987
@@ -230,19 +226,19 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="Tadpoles"]
+[node name="Area2D" type="Area2D" parent="Other3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tadpoles/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other3/Area2D"]
 position = Vector2(-3.78784, 3.66321)
 shape = SubResource("RectangleShape2D_c5swp")
 
-[node name="Knife" type="Sprite2D" parent="."]
+[node name="Other2" type="Sprite2D" parent="."]
 position = Vector2(750, 200)
 scale = Vector2(0.147651, 0.152561)
 texture = ExtResource("1_lvyfc")
-script = ExtResource("13_tjysm")
+script = ExtResource("2_wf3ta")
 
-[node name="Button" type="Button" parent="Knife"]
+[node name="Button" type="Button" parent="Other2"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -255,19 +251,19 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="Knife"]
+[node name="Area2D" type="Area2D" parent="Other2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Knife/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other2/Area2D"]
 position = Vector2(-3.38525, 0)
 shape = SubResource("RectangleShape2D_xttjc")
 
-[node name="Glitter" type="Sprite2D" parent="."]
+[node name="Other1" type="Sprite2D" parent="."]
 position = Vector2(828, 201)
 scale = Vector2(0.082, 0.085)
 texture = ExtResource("3_b6e2o")
-script = ExtResource("14_fo1qt")
+script = ExtResource("2_wf3ta")
 
-[node name="Button" type="Button" parent="Glitter"]
+[node name="Button" type="Button" parent="Other1"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_left = 0.031
@@ -281,36 +277,30 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="Glitter"]
+[node name="Area2D" type="Area2D" parent="Other1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Glitter/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other1/Area2D"]
 position = Vector2(6.09961, 0)
 shape = SubResource("RectangleShape2D_u6d5n")
 
 [connection signal="button_down" from="Oxygen/Button" to="Oxygen" method="_on_button_button_down"]
 [connection signal="button_up" from="Oxygen/Button" to="Oxygen" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Oxygen/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
 [connection signal="button_down" from="Helium/Button" to="Helium" method="_on_button_button_down"]
 [connection signal="button_up" from="Helium/Button" to="Helium" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Helium/helium" to="Bowl" method="_on_area_2d_area_shape_entered"]
 [connection signal="button_down" from="Xenon/Button" to="Xenon" method="_on_button_button_down"]
 [connection signal="button_up" from="Xenon/Button" to="Xenon" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Xenon/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
-[connection signal="button_down" from="Water/Button" to="Water" method="_on_button_button_down"]
-[connection signal="button_up" from="Water/Button" to="Water" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Water/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
-[connection signal="button_down" from="Soap/Button" to="Soap" method="_on_button_button_down"]
-[connection signal="button_up" from="Soap/Button" to="Soap" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Soap/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
-[connection signal="button_down" from="Paint/Button" to="Paint" method="_on_button_button_down"]
-[connection signal="button_up" from="Paint/Button" to="Paint" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Paint/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
-[connection signal="button_down" from="Tadpoles/Button" to="Tadpoles" method="_on_button_button_down"]
-[connection signal="button_up" from="Tadpoles/Button" to="Tadpoles" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Tadpoles/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
-[connection signal="button_down" from="Knife/Button" to="Knife" method="_on_button_button_down"]
-[connection signal="button_up" from="Knife/Button" to="Knife" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Knife/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
-[connection signal="button_down" from="Glitter/Button" to="Glitter" method="_on_button_button_down"]
-[connection signal="button_up" from="Glitter/Button" to="Glitter" method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="Glitter/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_entered" from="Bowl/Area2D" to="Helium/Area2D" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_entered" from="Bowl/Area2D" to="Xenon/Area2D" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="Bowl/Area2D" to="Oxygen" method="_on_area_2d_area_shape_exited"]
+[connection signal="button_down" from="Liquid1/Button" to="Liquid1" method="_on_button_button_down"]
+[connection signal="button_up" from="Liquid1/Button" to="Liquid1" method="_on_button_button_up"]
+[connection signal="button_down" from="Liquid2/Button" to="Liquid2" method="_on_button_button_down"]
+[connection signal="button_up" from="Liquid2/Button" to="Liquid2" method="_on_button_button_up"]
+[connection signal="button_down" from="Liquid3/Button" to="Liquid3" method="_on_button_button_down"]
+[connection signal="button_up" from="Liquid3/Button" to="Liquid3" method="_on_button_button_up"]
+[connection signal="button_down" from="Other3/Button" to="Other3" method="_on_button_button_down"]
+[connection signal="button_up" from="Other3/Button" to="Other3" method="_on_button_button_up"]
+[connection signal="button_down" from="Other2/Button" to="Other2" method="_on_button_button_down"]
+[connection signal="button_up" from="Other2/Button" to="Other2" method="_on_button_button_up"]
+[connection signal="button_down" from="Other1/Button" to="Other1" method="_on_button_button_down"]
+[connection signal="button_up" from="Other1/Button" to="Other1" method="_on_button_button_up"]
