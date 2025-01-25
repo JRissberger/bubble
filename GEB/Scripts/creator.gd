@@ -12,7 +12,7 @@ var knifeBowl;
 var bowlImages;
 
 func _ready() -> void:
-	waterBowl = get_node("waterBowl");
+	waterBowl = get_node("waterBowl")
 	paintBowl = get_node("paintBowl");
 	soapBowl = get_node("soapBowl");
 	xenonBowl = get_node("xenonBowl");
@@ -65,7 +65,21 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	
 	if BubbleManager.currentObject == "knife" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.newBubble.Atk = 4;
+		BubbleManager.newBubble.atk = 4;
+	
+#clears all ingredients in the bowl. Could make this less 
+#expensive by storing what ingredients have been added to the bown
+func clearBowl():
+	waterBowl.visible = false;
+	paintBowl.visible = false;
+	soapBowl.visible = false;
+	xenonBowl.visible = false;
+	oxygenBowl.visible = false;
+	heliumBowl.visible = false;
+	#TODO uncomment out when these sprites are implemented
+	#tadpoleBowl.visible = false;
+	#glitterBowl.visible = false;
+	#knifeBowl.visible = false;
 	
 
 #resets all visible objects (does this regardless of reset or create being made)

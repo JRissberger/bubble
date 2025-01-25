@@ -8,3 +8,7 @@ func _on_button_pressed() -> void:
 	BubbleManager.newBubble.Spd_mult = 5;
 	print(BubbleManager.newBubble.Spd_mult);
 	
+	#call the resetBubble function in bubble manager
+	BubbleManager.resetBubble();
+	
+	# clear the bowl
