@@ -32,7 +32,7 @@ func _ready() -> void:
 	apply_central_force(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * spd_mult)
 
 func _process(delta: float) -> void:
-	apply_central_force(linear_velocity.normalized() * 0.01)
+	apply_central_force(linear_velocity.normalized() * 0.02)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
