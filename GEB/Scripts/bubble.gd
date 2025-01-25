@@ -1,9 +1,12 @@
 class_name bubble extends RigidBody2D
+@export var label: Label
 var atk
 var health
 var hp
 var spd_mult
 var radius
+var playerCreated; #bool
+var winner; #bool
 
 var Atk:
 	get: 
@@ -28,11 +31,13 @@ func _init(hp=5, spd_mult=5, atk=1, radius=70):
 	self.spd_mult = spd_mult
 	self.atk = atk
 	self.radius = radius
+	self.playerCreated = false;
+	self.winner = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	apply_central_force(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * spd_mult)
-
+	label.text = str("Health: ", health)
 
 func hit(attack: int) -> void:
 	self.health -= attack
@@ -47,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		linear_velocity = linear_velocity.bounce(collis.get_normal())
 		if collis.get_collider().has_method("hit"):
 			collis.get_collider().hit(atk)
+			label.text = str("Health: ", health)
 		if health <= 0:
-			pass	#TODO: when health 0, ????
+			get_node
 		
