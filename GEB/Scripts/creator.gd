@@ -9,6 +9,7 @@ var heliumBowl;
 var tadpoleBowl;
 var glitterBowl;
 var knifeBowl;
+var bowlImages;
 
 func _ready() -> void:
 	waterBowl = get_node("waterBowl")
