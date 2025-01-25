@@ -5,6 +5,8 @@ var health
 var hp
 var spd_mult
 var radius
+var playerCreated; #bool
+var winner; #bool
 
 var Atk:
 	get: 
@@ -29,6 +31,8 @@ func _init(hp=5, spd_mult=5, atk=1, radius=70):
 	self.spd_mult = spd_mult
 	self.atk = atk
 	self.radius = radius
+	self.playerCreated = false;
+	self.winner = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
