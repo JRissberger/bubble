@@ -1,26 +1,31 @@
 class_name bubble extends RigidBody2D
+var atk
+var hp
+var spd_mult
+var radius
 
-var atk:
+var Atk:
 	get: 
 		return atk
 	set(value):
 		atk = value
-var hp:
+var Hp:
 	get: 
 		return hp
 	set(value):
 		hp = value
-var spd_mult:
+var Spd_mult:
 	get: 
 		return spd_mult
 	set(value):
 		spd_mult = value	
 
-var radius
-
 
 func _init(hp=5, spd_mult=5, atk=1, radius=70):
-	pass
+	self.hp = hp
+	self.spd_mult = spd_mult
+	self.atk = atk
+	self.radius = radius
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

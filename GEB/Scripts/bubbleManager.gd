@@ -1,5 +1,6 @@
 extends Node
-
+var newBubble = bubble.new();
+var opponentBubble = bubble.new();
 #tracks the current held object
 #this is here exclusively because I'm fighting for my life with signals and I don't have the time for that
 #this approach would NOT get a good grade for coding standards my bad
@@ -26,5 +27,6 @@ var speed3 = 5;
 var attack3 = 2;
 
 func _ready() -> void:
-	#instantiate bubbles here
+	#instantiate bubbles here\
+	print(opponentBubble.atk);
 	pass # Replace with function body.
