@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://boksbe5ds0mlp"]
+
+[ext_resource type="Script" path="res://Scripts/bubble.gd" id="1_o7i4n"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_klq6h"]
+size = Vector2(150, 150)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvgsc"]
+radius = 75.0
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(186, 391)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(62, 39)
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_o7i4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = SubResource("PlaceholderTexture2D_klq6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_xvgsc")
+debug_color = Color(0, 0.592157, 0.752941, 1)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(807, -219)
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_o7i4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+texture = SubResource("PlaceholderTexture2D_klq6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("CircleShape2D_xvgsc")
+debug_color = Color(0, 0.592157, 0.752941, 1)
