@@ -15,7 +15,12 @@ var health1 = 5;
 var speed1 = 5;
 var attack1 = 2;
 
-#variables for the stored opponent bubble
+#variables for the completed bubble
 var health2 = 5;
 var speed2 = 5;
 var attack2 = 2;
+
+#variables for the stored opponent bubble
+var health3 = 5;
+var speed3 = 5;
+var attack3 = 2;

@@ -1,16 +1,5 @@
 extends Sprite2D
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# TODO: check added status of each type. determine what was added based on new health/speed/attack
-	# show/hide sprites accordingly
-	pass
-	
-	
-
-
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	#determines what to update in manager based on held object
 	#I apologize for the if statements this is gonna be messy
@@ -51,4 +40,5 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		BubbleManager.otherAdded = true;
 		BubbleManager.attack1 = 5;
 	
-	print(BubbleManager.speed1, BubbleManager.health1, BubbleManager.attack1);
+	
+	
