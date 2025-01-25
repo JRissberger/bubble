@@ -1,4 +1,5 @@
 extends Node
+
 var newBubble = bubble.new();
 var opponentBubble = bubble.new();
 #tracks the current held object
@@ -6,12 +7,30 @@ var opponentBubble = bubble.new();
 #this approach would NOT get a good grade for coding standards my bad
 var currentObject = "none";
 
+#where all of the bubble objects will be stored
+var bubbles = [];
+
 #tracks what's currently been added to the bubble TODO dont forget to reset these when clicking create!!!
 var gasAdded = false;
 var liquidAdded = false;
 var otherAdded = false;
 
 
-func _ready() -> void:
+func _ready():
 	
 	pass # Replace with function body.
+
+#call this when the "create" button is clicked. 
+#since the creater already modifies the "new bubble", we have the new bubble already made
+#add the new bubble and store it into the list of bubbles at hand; 
+#reset the newBubble variable to a fresh bubble
+func createBubble():
+	#store the bubble into the list of bubbles we have on hand
+	bubbles.push_back(newBubble);
+	resetBubble();
+	
+#resets the newBubble object.
+func resetBubble():
+	#clear the bubble
+	newBubble = bubble.new();
+	#garbage collector should be able to sweep up the "used" bubble later
