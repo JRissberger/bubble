@@ -2,6 +2,10 @@ extends Sprite2D
 
 var dragging = false;
 var objectOffset = Vector2(0,0)
+var originalPosition = Vector2(0,0)
+
+func _ready() -> void:
+	originalPosition = position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
@@ -20,3 +24,4 @@ func _on_button_button_up() -> void:
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	print ("entered")
+	

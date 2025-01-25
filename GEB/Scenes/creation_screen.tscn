@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://def1h6ai23y7t"]
+[gd_scene load_steps=17 format=3 uid="uid://def1h6ai23y7t"]
 
 [ext_resource type="Texture2D" uid="uid://bm6mfr2le218k" path="res://Images/red1.png" id="1_lvyfc"]
 [ext_resource type="Texture2D" uid="uid://brrlhofy8wdfy" path="res://Images/bowlPlaceholder.png" id="1_tjiel"]
@@ -10,8 +10,32 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0as4c"]
 size = Vector2(304.772, 511.271)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esc8h"]
+size = Vector2(719.708, 753.397)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwwby"]
+size = Vector2(212.468, 259.726)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwk45"]
 size = Vector2(223.869, 223.381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcvxt"]
+size = Vector2(304.773, 517.826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puyoj"]
+size = Vector2(720.93, 764.045)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e31g7"]
+size = Vector2(200, 260.223)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5swp"]
+size = Vector2(196.97, 263.736)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xttjc"]
+size = Vector2(291.228, 511.271)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6d5n"]
+size = Vector2(695.124, 705.882)
 
 [node name="Creation_Screen" type="Node2D"]
 
@@ -60,6 +84,12 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Area2D" type="Area2D" parent="Gas2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gas2/Area2D"]
+position = Vector2(6.09961, 0)
+shape = SubResource("RectangleShape2D_esc8h")
+
 [node name="Gas3" type="Sprite2D" parent="."]
 position = Vector2(1069, 115)
 scale = Vector2(0.263569, 0.334968)
@@ -79,7 +109,15 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Area2D" type="Area2D" parent="Gas3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gas3/Area2D"]
+position = Vector2(0, 1.49268)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_iwwby")
+
 [node name="Bowl" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(580, 581)
 scale = Vector2(1.32667, 0.308889)
 texture = ExtResource("1_tjiel")
@@ -111,6 +149,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Area2D" type="Area2D" parent="Liquid1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liquid1/Area2D"]
+position = Vector2(-3.38638, 3.27747)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_fcvxt")
+
 [node name="Liquid2" type="Sprite2D" parent="."]
 position = Vector2(90, 112)
 scale = Vector2(0.086, 0.089)
@@ -129,6 +174,12 @@ offset_bottom = -256.971
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Liquid2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liquid2/Area2D"]
+position = Vector2(-11.6278, -11.2361)
+shape = SubResource("RectangleShape2D_puyoj")
 
 [node name="Liquid3" type="Sprite2D" parent="."]
 position = Vector2(175, 112)
@@ -150,6 +201,12 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Area2D" type="Area2D" parent="Liquid3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liquid3/Area2D"]
+position = Vector2(-3.8465, 0)
+shape = SubResource("RectangleShape2D_e31g7")
+
 [node name="Other3" type="Sprite2D" parent="."]
 position = Vector2(899, 200)
 scale = Vector2(0.264, 0.273)
@@ -168,6 +225,12 @@ offset_bottom = -127.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Other3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other3/Area2D"]
+position = Vector2(-3.78784, 3.66321)
+shape = SubResource("RectangleShape2D_c5swp")
 
 [node name="Other2" type="Sprite2D" parent="."]
 position = Vector2(750, 200)
@@ -188,6 +251,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Area2D" type="Area2D" parent="Other2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other2/Area2D"]
+position = Vector2(-3.38525, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_xttjc")
+
 [node name="Other1" type="Sprite2D" parent="."]
 position = Vector2(828, 201)
 scale = Vector2(0.082, 0.085)
@@ -207,6 +277,12 @@ offset_bottom = -368.264
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Other1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Other1/Area2D"]
+position = Vector2(6.09961, 0)
+shape = SubResource("RectangleShape2D_u6d5n")
 
 [connection signal="button_down" from="Gas1/Button" to="Gas1" method="_on_button_button_down"]
 [connection signal="button_up" from="Gas1/Button" to="Gas1" method="_on_button_button_up"]

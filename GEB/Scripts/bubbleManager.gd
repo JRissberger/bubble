@@ -1,11 +1,11 @@
 extends Node
 
+#variables for the bubble currently being created
+var health1 = 5;
+var speed1 = 5;
+var attack1 = 2;
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#variables for the stored opponent bubble
+var health2 = 5;
+var speed2 = 5;
+var attack2 = 2;
