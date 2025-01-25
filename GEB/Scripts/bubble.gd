@@ -31,6 +31,11 @@ func _init(hp=5, spd_mult=5, atk=1, radius=70):
 func _ready() -> void:
 	apply_central_force(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * spd_mult)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	apply_central_force(linear_velocity.normalized() * 0.01)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	var collis = move_and_collide(linear_velocity * delta)
+	if collis:
+		linear_velocity = linear_velocity.bounce(collis.get_normal())

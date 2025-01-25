@@ -8,6 +8,10 @@ size = Vector2(150, 150)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xvgsc"]
 radius = 75.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d7j8s"]
+normal = Vector2(1, 0)
+distance = 27.9983
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(186, 391)
 
@@ -36,3 +40,33 @@ texture = SubResource("PlaceholderTexture2D_klq6h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
 shape = SubResource("CircleShape2D_xvgsc")
 debug_color = Color(0, 0.592157, 0.752941, 1)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+position = Vector2(-25, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_d7j8s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+position = Vector2(593, -37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+position = Vector2(-3, 13)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_d7j8s")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2(1177, 329)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_d7j8s")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+position = Vector2(681, 673)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+shape = SubResource("WorldBoundaryShape2D_d7j8s")
