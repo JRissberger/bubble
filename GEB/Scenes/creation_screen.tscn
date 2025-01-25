@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://def1h6ai23y7t"]
+[gd_scene load_steps=9 format=3 uid="uid://def1h6ai23y7t"]
 
 [ext_resource type="Texture2D" uid="uid://bm6mfr2le218k" path="res://Images/red1.png" id="1_lvyfc"]
 [ext_resource type="Texture2D" uid="uid://brrlhofy8wdfy" path="res://Images/bowlPlaceholder.png" id="1_tjiel"]
-[ext_resource type="Script" path="res://Scripts/gas_1.gd" id="2_wf3ta"]
+[ext_resource type="Script" path="res://Scripts/draggable.gd" id="2_wf3ta"]
 [ext_resource type="Texture2D" uid="uid://c50b4i7rfst7s" path="res://Images/red2.jpg" id="3_b6e2o"]
 [ext_resource type="Texture2D" uid="uid://b7gg6mbrei57x" path="res://Images/red3.jpg" id="4_tjb02"]
+[ext_resource type="Script" path="res://Scripts/creator.gd" id="6_rbtkv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0as4c"]
+size = Vector2(304.772, 511.271)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwk45"]
+size = Vector2(223.869, 223.381)
 
 [node name="Creation_Screen" type="Node2D"]
 
@@ -26,6 +33,13 @@ offset_bottom = -256.971
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Gas1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gas1/Area2D"]
+position = Vector2(3.38623, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0as4c")
 
 [node name="Gas2" type="Sprite2D" parent="."]
 position = Vector2(984, 113)
@@ -66,9 +80,133 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Bowl" type="Sprite2D" parent="."]
-position = Vector2(581, 582)
+position = Vector2(580, 581)
 scale = Vector2(1.32667, 0.308889)
 texture = ExtResource("1_tjiel")
+script = ExtResource("6_rbtkv")
+
+[node name="Area2D" type="Area2D" parent="Bowl"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl/Area2D"]
+position = Vector2(0.376831, -1.61877)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nwk45")
+
+[node name="Liquid1" type="Sprite2D" parent="."]
+position = Vector2(30, 112)
+scale = Vector2(0.147651, 0.152561)
+texture = ExtResource("1_lvyfc")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Liquid1"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.001
+offset_top = -235.971
+offset_right = -149.001
+offset_bottom = -256.971
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Liquid2" type="Sprite2D" parent="."]
+position = Vector2(90, 112)
+scale = Vector2(0.086, 0.089)
+texture = ExtResource("3_b6e2o")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Liquid2"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.001
+offset_top = -235.971
+offset_right = -149.001
+offset_bottom = -256.971
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Liquid3" type="Sprite2D" parent="."]
+position = Vector2(175, 112)
+scale = Vector2(0.26, 0.269)
+texture = ExtResource("4_tjb02")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Liquid3"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_top = 0.083
+anchor_right = 0.992
+anchor_bottom = 0.944
+offset_left = -100.0
+offset_top = -129.497
+offset_right = -97.44
+offset_bottom = -129.496
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Other3" type="Sprite2D" parent="."]
+position = Vector2(899, 200)
+scale = Vector2(0.264, 0.273)
+texture = ExtResource("4_tjb02")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Other3"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 0.987
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -143.0
+offset_right = -97.465
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Other2" type="Sprite2D" parent="."]
+position = Vector2(750, 200)
+scale = Vector2(0.147651, 0.152561)
+texture = ExtResource("1_lvyfc")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Other2"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.001
+offset_top = -235.971
+offset_right = -149.001
+offset_bottom = -256.971
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Other1" type="Sprite2D" parent="."]
+position = Vector2(828, 201)
+scale = Vector2(0.082, 0.085)
+texture = ExtResource("3_b6e2o")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Other1"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.031
+anchor_right = 1.0
+anchor_bottom = 0.999
+offset_left = -367.816
+offset_top = -367.0
+offset_right = -350.0
+offset_bottom = -368.264
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="Gas1/Button" to="Gas1" method="_on_button_button_down"]
 [connection signal="button_up" from="Gas1/Button" to="Gas1" method="_on_button_button_up"]
@@ -76,3 +214,16 @@ texture = ExtResource("1_tjiel")
 [connection signal="button_up" from="Gas2/Button" to="Gas2" method="_on_button_button_up"]
 [connection signal="button_down" from="Gas3/Button" to="Gas3" method="_on_button_button_down"]
 [connection signal="button_up" from="Gas3/Button" to="Gas3" method="_on_button_button_up"]
+[connection signal="area_shape_entered" from="Bowl/Area2D" to="Gas1" method="_on_area_2d_area_shape_entered"]
+[connection signal="button_down" from="Liquid1/Button" to="Liquid1" method="_on_button_button_down"]
+[connection signal="button_up" from="Liquid1/Button" to="Liquid1" method="_on_button_button_up"]
+[connection signal="button_down" from="Liquid2/Button" to="Liquid2" method="_on_button_button_down"]
+[connection signal="button_up" from="Liquid2/Button" to="Liquid2" method="_on_button_button_up"]
+[connection signal="button_down" from="Liquid3/Button" to="Liquid3" method="_on_button_button_down"]
+[connection signal="button_up" from="Liquid3/Button" to="Liquid3" method="_on_button_button_up"]
+[connection signal="button_down" from="Other3/Button" to="Other3" method="_on_button_button_down"]
+[connection signal="button_up" from="Other3/Button" to="Other3" method="_on_button_button_up"]
+[connection signal="button_down" from="Other2/Button" to="Other2" method="_on_button_button_down"]
+[connection signal="button_up" from="Other2/Button" to="Other2" method="_on_button_button_up"]
+[connection signal="button_down" from="Other1/Button" to="Other1" method="_on_button_button_down"]
+[connection signal="button_up" from="Other1/Button" to="Other1" method="_on_button_button_up"]

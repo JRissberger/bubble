@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/creation_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BubbleManager="*res://Scripts/bubbleManager.gd"
+
 [dotnet]
 
 project/assembly_name="GEB (Genetically Engineered Bubbles)"
