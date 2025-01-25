@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="GEB (Genetically Engineered Bubbles)"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="res://Scenes/creation_screen.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="GEB (Genetically Engineered Bubbles)"
 
 [rendering]
 

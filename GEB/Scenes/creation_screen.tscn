@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://def1h6ai23y7t"]
+
+[ext_resource type="Texture2D" uid="uid://bm6mfr2le218k" path="res://Images/red1.png" id="1_lvyfc"]
+[ext_resource type="Texture2D" uid="uid://brrlhofy8wdfy" path="res://Images/bowlPlaceholder.png" id="1_tjiel"]
+[ext_resource type="Script" path="res://Scripts/gas_1.gd" id="2_wf3ta"]
+[ext_resource type="Texture2D" uid="uid://c50b4i7rfst7s" path="res://Images/red2.jpg" id="3_b6e2o"]
+[ext_resource type="Texture2D" uid="uid://b7gg6mbrei57x" path="res://Images/red3.jpg" id="4_tjb02"]
+
+[node name="Creation_Screen" type="Node2D"]
+
+[node name="Gas1" type="Sprite2D" parent="."]
+position = Vector2(899, 112)
+scale = Vector2(0.147651, 0.152561)
+texture = ExtResource("1_lvyfc")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Gas1"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.001
+offset_top = -235.971
+offset_right = -149.001
+offset_bottom = -256.971
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Gas2" type="Sprite2D" parent="."]
+position = Vector2(984, 113)
+scale = Vector2(0.0819777, 0.103531)
+texture = ExtResource("3_b6e2o")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Gas2"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -376.0
+offset_top = -347.0
+offset_right = -356.0
+offset_bottom = -368.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Gas3" type="Sprite2D" parent="."]
+position = Vector2(1069, 115)
+scale = Vector2(0.263569, 0.334968)
+texture = ExtResource("4_tjb02")
+script = ExtResource("2_wf3ta")
+
+[node name="Button" type="Button" parent="Gas3"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.7917
+offset_top = -121.27
+offset_right = -99.7919
+offset_bottom = -142.27
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Bowl" type="Sprite2D" parent="."]
+position = Vector2(581, 582)
+scale = Vector2(1.32667, 0.308889)
+texture = ExtResource("1_tjiel")
+
+[connection signal="button_down" from="Gas1/Button" to="Gas1" method="_on_button_button_down"]
+[connection signal="button_up" from="Gas1/Button" to="Gas1" method="_on_button_button_up"]
+[connection signal="button_down" from="Gas2/Button" to="Gas2" method="_on_button_button_down"]
+[connection signal="button_up" from="Gas2/Button" to="Gas2" method="_on_button_button_up"]
+[connection signal="button_down" from="Gas3/Button" to="Gas3" method="_on_button_button_down"]
+[connection signal="button_up" from="Gas3/Button" to="Gas3" method="_on_button_button_up"]
