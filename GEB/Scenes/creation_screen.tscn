@@ -1,19 +1,25 @@
-[gd_scene load_steps=25 format=3 uid="uid://def1h6ai23y7t"]
+[gd_scene load_steps=32 format=3 uid="uid://def1h6ai23y7t"]
 
 [ext_resource type="Texture2D" uid="uid://bm6mfr2le218k" path="res://Images/red1.png" id="1_lvyfc"]
-[ext_resource type="Texture2D" uid="uid://brrlhofy8wdfy" path="res://Images/bowlPlaceholder.png" id="1_tjiel"]
 [ext_resource type="Script" path="res://Scripts/Objects/oxygen.gd" id="2_vu4ed"]
 [ext_resource type="Script" path="res://Scripts/Objects/xenon.gd" id="2_wf3ta"]
 [ext_resource type="Texture2D" uid="uid://c50b4i7rfst7s" path="res://Images/red2.jpg" id="3_b6e2o"]
 [ext_resource type="Script" path="res://Scripts/Objects/helium.gd" id="4_8wl30"]
 [ext_resource type="Texture2D" uid="uid://b7gg6mbrei57x" path="res://Images/red3.jpg" id="4_tjb02"]
 [ext_resource type="Script" path="res://Scripts/creator.gd" id="6_rbtkv"]
+[ext_resource type="Texture2D" uid="uid://dw0pj2dh126cq" path="res://Images/Bowl.png" id="7_bc6nm"]
 [ext_resource type="Script" path="res://Scripts/Objects/water.gd" id="9_gb24p"]
+[ext_resource type="Texture2D" uid="uid://t4jrxtgrkbg8" path="res://Images/Water.png" id="9_mj2du"]
 [ext_resource type="Script" path="res://Scripts/Objects/soap.gd" id="10_1linw"]
+[ext_resource type="Texture2D" uid="uid://d1pey6vhytywb" path="res://Images/Paint.png" id="10_ro1au"]
 [ext_resource type="Script" path="res://Scripts/Objects/paint.gd" id="11_mjt71"]
+[ext_resource type="Texture2D" uid="uid://c4upaxuxmeqnk" path="res://Images/Soap.png" id="11_omuax"]
 [ext_resource type="Script" path="res://Scripts/Objects/tadpoles.gd" id="12_fkry1"]
+[ext_resource type="Texture2D" uid="uid://s7pyjdv8g8qb" path="res://Images/Xenon.png" id="12_qolln"]
+[ext_resource type="Texture2D" uid="uid://hguiulhwhfx6" path="res://Images/Oxygen.png" id="13_7qk4m"]
 [ext_resource type="Script" path="res://Scripts/Objects/knife.gd" id="13_tjysm"]
 [ext_resource type="Script" path="res://Scripts/Objects/glitter.gd" id="14_fo1qt"]
+[ext_resource type="Texture2D" uid="uid://ddl2opvrhgfki" path="res://Images/Helium.png" id="14_k7xfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0as4c"]
 size = Vector2(304.772, 511.271)
@@ -24,8 +30,22 @@ size = Vector2(719.708, 753.397)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwwby"]
 size = Vector2(212.468, 259.726)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwk45"]
-size = Vector2(223.869, 223.381)
+[sub_resource type="GDScript" id="GDScript_drkry"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whogs"]
+radius = 143.06
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcvxt"]
 size = Vector2(304.773, 517.826)
@@ -123,17 +143,41 @@ position = Vector2(0, 1.49268)
 shape = SubResource("RectangleShape2D_iwwby")
 
 [node name="Bowl" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(580, 581)
-scale = Vector2(1.32667, 0.308889)
-texture = ExtResource("1_tjiel")
+z_index = -1
+position = Vector2(528, 378)
+texture = ExtResource("7_bc6nm")
 script = ExtResource("6_rbtkv")
 
 [node name="Area2D" type="Area2D" parent="Bowl"]
+script = SubResource("GDScript_drkry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl/Area2D"]
-position = Vector2(0.376831, -1.61877)
-shape = SubResource("RectangleShape2D_nwk45")
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_whogs")
+
+[node name="waterBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+texture = ExtResource("9_mj2du")
+
+[node name="paintBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+texture = ExtResource("10_ro1au")
+
+[node name="soapBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+texture = ExtResource("11_omuax")
+
+[node name="xenonBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+texture = ExtResource("12_qolln")
+
+[node name="oxygenBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+texture = ExtResource("13_7qk4m")
+
+[node name="heliumBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+texture = ExtResource("14_k7xfv")
 
 [node name="Water" type="Sprite2D" parent="."]
 position = Vector2(30, 112)

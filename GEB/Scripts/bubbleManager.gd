@@ -24,3 +24,7 @@ var attack2 = 2;
 var health3 = 5;
 var speed3 = 5;
 var attack3 = 2;
+
+func _ready() -> void:
+	#instantiate bubbles here
+	pass # Replace with function body.
