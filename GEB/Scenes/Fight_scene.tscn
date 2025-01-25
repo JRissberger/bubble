@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://boksbe5ds0mlp"]
+[gd_scene load_steps=6 format=3 uid="uid://boksbe5ds0mlp"]
 
 [ext_resource type="Script" path="res://Scripts/bubble.gd" id="1_o7i4n"]
 
@@ -12,32 +12,36 @@ radius = 75.0
 normal = Vector2(1, 0)
 distance = 27.9983
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgkyb"]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(186, 391)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="Bubble1" type="RigidBody2D" parent="." node_paths=PackedStringArray("label")]
 position = Vector2(62, 39)
 mass = 0.001
 gravity_scale = 0.0
 script = ExtResource("1_o7i4n")
+label = NodePath("../Control/Label1")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Bubble1"]
 texture = SubResource("PlaceholderTexture2D_klq6h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bubble1"]
 shape = SubResource("CircleShape2D_xvgsc")
 debug_color = Color(0, 0.592157, 0.752941, 1)
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+[node name="Bubble2" type="RigidBody2D" parent="." node_paths=PackedStringArray("label")]
 position = Vector2(807, -219)
 mass = 0.001
 gravity_scale = 0.0
 script = ExtResource("1_o7i4n")
+label = NodePath("../Control/Label2")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Bubble2"]
 texture = SubResource("PlaceholderTexture2D_klq6h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bubble2"]
 shape = SubResource("CircleShape2D_xvgsc")
 debug_color = Color(0, 0.592157, 0.752941, 1)
 
@@ -70,3 +74,39 @@ rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 shape = SubResource("WorldBoundaryShape2D_d7j8s")
+
+[node name="GameOver" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(147, 100)
+visible = true
+content_scale_size = Vector2i(7, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qgkyb")
+
+[node name="Label" type="Label" parent="GameOver"]
+offset_right = 147.0
+offset_bottom = 100.0
+text = " Ran out of health! "
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -189.0
+offset_top = -388.0
+offset_right = 963.0
+offset_bottom = 254.0
+
+[node name="Label1" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.164
+anchor_bottom = 0.061
+offset_left = -0.456
+offset_right = 0.071991
+offset_bottom = -0.162003
+
+[node name="Label2" type="Label" parent="Control"]
+offset_left = 1054.0
+offset_top = 1.0
+offset_right = 1154.0
+offset_bottom = 46.0
