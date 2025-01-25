@@ -25,45 +25,45 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	#Flat adding to the stats so resetting is easier
 	if BubbleManager.currentObject == "xenon" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.speed1 = 6;
+		BubbleManager.newBubble.spd_mult = 6;
 		xenonBowl.visible = true;
 	
 	if BubbleManager.currentObject == "oxygen" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.speed1 = 8;
+		BubbleManager.newBubble.spd_mult = 8;
 		oxygenBowl.visible = true;
 	
 	if BubbleManager.currentObject == "helium" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.speed1 = 10;
+		BubbleManager.newBubble.spd_mult = 10;
 		heliumBowl.visible = true;
 	
 	if BubbleManager.currentObject == "water" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.health1 = 6;
+		BubbleManager.newBubble.hp = 6;
 		waterBowl.visible = true;
 	
 	if BubbleManager.currentObject == "paint" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.health1 = 8;
+		BubbleManager.newBubble.hp = 8;
 		paintBowl.visible = true;
 	
 	if BubbleManager.currentObject == "soap" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.health1 = 10;
-		paintBowl.visible = true;
+		BubbleManager.newBubble.hp = 10;
+		soapBowl.visible = true;
 	
 	if BubbleManager.currentObject == "tadpoles" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.attack1 = 4;
+		BubbleManager.newBubble.atk = 2;
 	
 	if BubbleManager.currentObject == "glitter" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.attack1 = 3;
+		BubbleManager.newBubble.atk = 3;
 	
 	if BubbleManager.currentObject == "knife" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.attack1 = 5;
+		BubbleManager.newBubble.atk = 4;
 	
 	
 	
