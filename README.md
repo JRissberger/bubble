@@ -10,6 +10,7 @@ create genetically engineered bubbles (do bubbles have genes??? discuss) pit the
 		-last bubble alive wins and is stored for the next match
 
 Ingredients
+
 	Liquid
 	-water
  	-soap
@@ -17,11 +18,14 @@ Ingredients
   
  	Gas
 	-helium
- 	-
+ 	-oxygen
+  	-xenon
   
   	Other
    	-multitudes of tadpoles
     	-a knife
+     	-glitter
+      
 Individual parts
 
 	1. art assets
