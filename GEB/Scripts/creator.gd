@@ -1,4 +1,23 @@
 extends Sprite2D
+#gets a reference to all the bowl sprites
+var waterBowl;
+var paintBowl;
+var soapBowl;
+var xenonBowl;
+var oxygenBowl;
+var heliumBowl;
+var tadpoleBowl;
+var glitterBowl;
+var knifeBowl;
+
+func _ready() -> void:
+	waterBowl = get_node("waterBowl")
+	paintBowl = get_node("paintBowl");
+	soapBowl = get_node("soapBowl");
+	xenonBowl = get_node("xenonBowl");
+	oxygenBowl = get_node("oxygenBowl");
+	heliumBowl = get_node("heliumBowl");
+	pass
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	#determines what to update in manager based on held object
@@ -7,26 +26,32 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	if BubbleManager.currentObject == "xenon" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
 		BubbleManager.speed1 = 6;
+		xenonBowl.visible = true;
 	
 	if BubbleManager.currentObject == "oxygen" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
 		BubbleManager.speed1 = 8;
+		oxygenBowl.visible = true;
 	
 	if BubbleManager.currentObject == "helium" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
 		BubbleManager.speed1 = 10;
+		heliumBowl.visible = true;
 	
 	if BubbleManager.currentObject == "water" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
 		BubbleManager.health1 = 6;
+		waterBowl.visible = true;
 	
 	if BubbleManager.currentObject == "paint" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
 		BubbleManager.health1 = 8;
+		paintBowl.visible = true;
 	
 	if BubbleManager.currentObject == "soap" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
 		BubbleManager.health1 = 10;
+		paintBowl.visible = true;
 	
 	if BubbleManager.currentObject == "tadpoles" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
