@@ -481,4 +481,6 @@ texture = ExtResource("29_b8jw7")
 [connection signal="button_down" from="Glitter/Button" to="Glitter" method="_on_button_button_down"]
 [connection signal="button_up" from="Glitter/Button" to="Glitter" method="_on_button_button_up"]
 [connection signal="area_shape_entered" from="Glitter/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
+[connection signal="pressed" from="Reset/Button" to="Bowl" method="_on_button_pressed"]
 [connection signal="pressed" from="Reset/Button" to="Reset" method="_on_button_pressed"]
+[connection signal="pressed" from="Create/Button" to="Bowl" method="_on_button_pressed"]

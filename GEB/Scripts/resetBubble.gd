@@ -16,3 +16,4 @@ func _on_button_pressed() -> void:
 	BubbleManager.resetBubble();
 	
 	# clear the bowl
+	
