@@ -18,8 +18,10 @@ func _ready() -> void:
 	xenonBowl = get_node("xenonBowl");
 	oxygenBowl = get_node("oxygenBowl");
 	heliumBowl = get_node("heliumBowl");
-	bowlImages = [waterBowl, paintBowl, soapBowl, xenonBowl, oxygenBowl, heliumBowl];
-	pass
+	glitterBowl = get_node("glitterBowl");
+	knifeBowl = get_node("knifeBowl");
+	tadpoleBowl = get_node("tadpoleBowl");
+	bowlImages = [waterBowl, paintBowl, soapBowl, xenonBowl, oxygenBowl, heliumBowl, glitterBowl, knifeBowl, tadpoleBowl];
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	#determines what to update in manager based on held object
@@ -58,19 +60,22 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	if BubbleManager.currentObject == "tadpoles" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
 		BubbleManager.newBubble.Atk = 2;
+		tadpoleBowl.visible = true;
 	
 	if BubbleManager.currentObject == "glitter" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
 		BubbleManager.newBubble.Atk = 3;
+		glitterBowl.visible = true;
 	
 	if BubbleManager.currentObject == "knife" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
 		BubbleManager.newBubble.Atk = 4;
+		knifeBowl.visible = true;
 	
 
 #resets all visible objects (does this regardless of reset or create being made)
 func _on_button_pressed() -> void:
-	for i in 6:
+	for i in 9:
 		bowlImages[i].visible = false;
 	BubbleManager.otherAdded = false;
 	BubbleManager.liquidAdded = false;

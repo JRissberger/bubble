@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://def1h6ai23y7t"]
+[gd_scene load_steps=45 format=3 uid="uid://def1h6ai23y7t"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/oxygen.gd" id="2_vu4ed"]
 [ext_resource type="Script" path="res://Scripts/Objects/xenon.gd" id="2_wf3ta"]
@@ -23,11 +23,15 @@
 [ext_resource type="Texture2D" uid="uid://d10pm7d6c8pjt" path="res://Images/heliumBowl.png" id="14_d0asa"]
 [ext_resource type="Script" path="res://Scripts/Objects/glitter.gd" id="14_fo1qt"]
 [ext_resource type="Texture2D" uid="uid://ddl2opvrhgfki" path="res://Images/Helium.png" id="14_k7xfv"]
+[ext_resource type="Texture2D" uid="uid://bxhp3prtqtg4k" path="res://Images/tadpoleBowl.png" id="15_asilt"]
 [ext_resource type="Texture2D" uid="uid://108r2xqc65tp" path="res://Images/tadpoles.png" id="15_xkuff"]
+[ext_resource type="Texture2D" uid="uid://07crmpxufgnf" path="res://Images/glitterBowl.png" id="16_angdb"]
 [ext_resource type="Texture2D" uid="uid://cm307rm6njjc5" path="res://Images/knife.png" id="17_gvx3u"]
+[ext_resource type="Texture2D" uid="uid://dsjkd4413a36u" path="res://Images/knifeBowl.png" id="17_owrvl"]
 [ext_resource type="Texture2D" uid="uid://cljjnn18jj8n0" path="res://Images/glitter.png" id="19_bfj2x"]
 [ext_resource type="Script" path="res://Scripts/resetBubble.gd" id="27_05d13"]
 [ext_resource type="Script" path="res://Scripts/createBubble.gd" id="28_gdeot"]
+[ext_resource type="Texture2D" uid="uid://dwpg4clss3ggy" path="res://Images/Table.png" id="29_b8jw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0as4c"]
 size = Vector2(188, 511.271)
@@ -203,6 +207,22 @@ texture = ExtResource("13_xbwhy")
 [node name="heliumBowl" type="Sprite2D" parent="Bowl"]
 visible = false
 texture = ExtResource("14_d0asa")
+
+[node name="tadpoleBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+position = Vector2(5, 5)
+texture = ExtResource("15_asilt")
+
+[node name="glitterBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+position = Vector2(4, -3)
+texture = ExtResource("16_angdb")
+
+[node name="knifeBowl" type="Sprite2D" parent="Bowl"]
+visible = false
+position = Vector2(10, 8)
+scale = Vector2(0.251953, 0.25)
+texture = ExtResource("17_owrvl")
 
 [node name="Water" type="Sprite2D" parent="."]
 position = Vector2(50, 112)
@@ -390,6 +410,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Create" type="ColorRect" parent="."]
 offset_left = 798.0
@@ -425,6 +447,12 @@ offset_right = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(593, 325)
+scale = Vector2(1.01, 1)
+texture = ExtResource("29_b8jw7")
 
 [connection signal="button_down" from="Oxygen/Button" to="Oxygen" method="_on_button_button_down"]
 [connection signal="button_up" from="Oxygen/Button" to="Oxygen" method="_on_button_button_up"]
