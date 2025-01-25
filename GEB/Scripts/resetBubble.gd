@@ -1,15 +1,10 @@
 extends ColorRect
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+#sets newBubble stats back to default
 func _on_button_pressed() -> void:
-	print("reset")
+	BubbleManager.newBubble.Hp = 5;
+	BubbleManager.newBubble.Atk = 1;
+	BubbleManager.newBubble.Spd_mult = 5;
+	print(BubbleManager.newBubble.Spd_mult);
+	
