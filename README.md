@@ -10,6 +10,7 @@ create genetically engineered bubbles (do bubbles have genes??? discuss) pit the
 		-last bubble alive wins and is stored for the next match
 
 Individual parts
+
 	1. art assets
 		-bubble ingredients
 		-bowl
