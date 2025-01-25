@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddl2opvrhgfki"
-path="res://.godot/imported/helium.png-a87696e0f20afd68c236fa63306311d7.ctex"
+uid="uid://cljjnn18jj8n0"
+path="res://.godot/imported/glitter.png-e0e58c7e98b1cec19ab3f6e1b6ceb34f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/helium.png"
-dest_files=["res://.godot/imported/helium.png-a87696e0f20afd68c236fa63306311d7.ctex"]
+source_file="res://Images/glitter.png"
+dest_files=["res://.godot/imported/glitter.png-e0e58c7e98b1cec19ab3f6e1b6ceb34f.ctex"]
 
 [params]
 

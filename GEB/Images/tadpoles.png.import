@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddl2opvrhgfki"
-path="res://.godot/imported/helium.png-a87696e0f20afd68c236fa63306311d7.ctex"
+uid="uid://108r2xqc65tp"
+path="res://.godot/imported/tadpoles.png-f923b899ea6c6d296651dc1b94ac52da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/helium.png"
-dest_files=["res://.godot/imported/helium.png-a87696e0f20afd68c236fa63306311d7.ctex"]
+source_file="res://Images/tadpoles.png"
+dest_files=["res://.godot/imported/tadpoles.png-f923b899ea6c6d296651dc1b94ac52da.ctex"]
 
 [params]
 
