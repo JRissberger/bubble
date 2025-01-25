@@ -365,7 +365,6 @@ offset_left = 42.0
 offset_top = 468.0
 offset_right = 289.0
 offset_bottom = 561.0
-color = Color(0.77, 0.231, 0, 1)
 script = ExtResource("27_05d13")
 
 [node name="Label" type="Label" parent="Reset"]
@@ -383,7 +382,6 @@ theme_override_font_sizes/font_size = 80
 text = "RESET"
 
 [node name="Button" type="Button" parent="Reset"]
-modulate = Color(0, 0.772549, 0.266667, 1)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -398,7 +396,6 @@ offset_left = 798.0
 offset_top = 464.0
 offset_right = 1073.0
 offset_bottom = 557.0
-color = Color(0, 0.718666, 0.77, 1)
 script = ExtResource("28_gdeot")
 
 [node name="Label" type="Label" parent="Create"]
@@ -455,6 +452,4 @@ grow_vertical = 2
 [connection signal="button_down" from="Glitter/Button" to="Glitter" method="_on_button_button_down"]
 [connection signal="button_up" from="Glitter/Button" to="Glitter" method="_on_button_button_up"]
 [connection signal="area_shape_entered" from="Glitter/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
-[connection signal="pressed" from="Reset/Button" to="Bowl" method="_on_button_pressed"]
 [connection signal="pressed" from="Reset/Button" to="Reset" method="_on_button_pressed"]
-[connection signal="pressed" from="Create/Button" to="Bowl" method="_on_button_pressed"]
