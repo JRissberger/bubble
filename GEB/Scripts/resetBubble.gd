@@ -14,6 +14,3 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	#call the resetBubble function in bubble manager
 	BubbleManager.resetBubble();
-	
-	# clear the bowl
-	

@@ -10,7 +10,7 @@ var currentObject = "none";
 #where all of the bubble objects will be stored
 var bubbles = [];
 
-#tracks what's currently been added to the bubble TODO dont forget to reset these when clicking create!!!
+#tracks what's currently been added to the bubble
 var gasAdded = false;
 var liquidAdded = false;
 var otherAdded = false;
@@ -25,6 +25,11 @@ func _ready():
 #add the new bubble and store it into the list of bubbles at hand; 
 #reset the newBubble variable to a fresh bubble
 func createBubble():
+	#resets trackers of what's been added
+	#TODO: do we want to check and make sure the player has added one of each type?
+	var gasAdded = false;
+	var liquidAdded = false;
+	var otherAdded = false;
 	#store the bubble into the list of bubbles we have on hand
 	bubbles.push_back(newBubble);
 	resetBubble();

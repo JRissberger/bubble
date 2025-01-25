@@ -484,3 +484,4 @@ texture = ExtResource("29_b8jw7")
 [connection signal="pressed" from="Reset/Button" to="Bowl" method="_on_button_pressed"]
 [connection signal="pressed" from="Reset/Button" to="Reset" method="_on_button_pressed"]
 [connection signal="pressed" from="Create/Button" to="Bowl" method="_on_button_pressed"]
+[connection signal="pressed" from="Create/Button" to="Create" method="_on_button_pressed"]
