@@ -1,34 +1,42 @@
-[gd_scene load_steps=32 format=3 uid="uid://def1h6ai23y7t"]
+[gd_scene load_steps=41 format=3 uid="uid://def1h6ai23y7t"]
 
-[ext_resource type="Texture2D" uid="uid://bm6mfr2le218k" path="res://Images/red1.png" id="1_lvyfc"]
 [ext_resource type="Script" path="res://Scripts/Objects/oxygen.gd" id="2_vu4ed"]
 [ext_resource type="Script" path="res://Scripts/Objects/xenon.gd" id="2_wf3ta"]
-[ext_resource type="Texture2D" uid="uid://c50b4i7rfst7s" path="res://Images/red2.jpg" id="3_b6e2o"]
 [ext_resource type="Script" path="res://Scripts/Objects/helium.gd" id="4_8wl30"]
-[ext_resource type="Texture2D" uid="uid://b7gg6mbrei57x" path="res://Images/red3.jpg" id="4_tjb02"]
 [ext_resource type="Script" path="res://Scripts/creator.gd" id="6_rbtkv"]
 [ext_resource type="Texture2D" uid="uid://dw0pj2dh126cq" path="res://Images/Bowl.png" id="7_bc6nm"]
 [ext_resource type="Script" path="res://Scripts/Objects/water.gd" id="9_gb24p"]
 [ext_resource type="Texture2D" uid="uid://t4jrxtgrkbg8" path="res://Images/Water.png" id="9_mj2du"]
+[ext_resource type="Texture2D" uid="uid://brlaloact2suj" path="res://Images/waterBowl.png" id="9_uiv7y"]
 [ext_resource type="Script" path="res://Scripts/Objects/soap.gd" id="10_1linw"]
+[ext_resource type="Texture2D" uid="uid://b80yhn68bosm3" path="res://Images/paintBowl.png" id="10_07n5x"]
 [ext_resource type="Texture2D" uid="uid://d1pey6vhytywb" path="res://Images/Paint.png" id="10_ro1au"]
 [ext_resource type="Script" path="res://Scripts/Objects/paint.gd" id="11_mjt71"]
 [ext_resource type="Texture2D" uid="uid://c4upaxuxmeqnk" path="res://Images/Soap.png" id="11_omuax"]
+[ext_resource type="Texture2D" uid="uid://bgyb46r7pjo6g" path="res://Images/soapBowl.png" id="11_utumw"]
 [ext_resource type="Script" path="res://Scripts/Objects/tadpoles.gd" id="12_fkry1"]
+[ext_resource type="Texture2D" uid="uid://bk42cwctjuhjp" path="res://Images/xenonBowl.png" id="12_oqmas"]
 [ext_resource type="Texture2D" uid="uid://s7pyjdv8g8qb" path="res://Images/Xenon.png" id="12_qolln"]
 [ext_resource type="Texture2D" uid="uid://hguiulhwhfx6" path="res://Images/Oxygen.png" id="13_7qk4m"]
 [ext_resource type="Script" path="res://Scripts/Objects/knife.gd" id="13_tjysm"]
+[ext_resource type="Texture2D" uid="uid://buhmdb51xy7on" path="res://Images/oxygenBowl.png" id="13_xbwhy"]
+[ext_resource type="Texture2D" uid="uid://d10pm7d6c8pjt" path="res://Images/heliumBowl.png" id="14_d0asa"]
 [ext_resource type="Script" path="res://Scripts/Objects/glitter.gd" id="14_fo1qt"]
 [ext_resource type="Texture2D" uid="uid://ddl2opvrhgfki" path="res://Images/Helium.png" id="14_k7xfv"]
+[ext_resource type="Texture2D" uid="uid://108r2xqc65tp" path="res://Images/tadpoles.png" id="15_xkuff"]
+[ext_resource type="Texture2D" uid="uid://cm307rm6njjc5" path="res://Images/knife.png" id="17_gvx3u"]
+[ext_resource type="Texture2D" uid="uid://cljjnn18jj8n0" path="res://Images/glitter.png" id="19_bfj2x"]
+[ext_resource type="Script" path="res://Scripts/resetBubble.gd" id="27_05d13"]
+[ext_resource type="Script" path="res://Scripts/createBubble.gd" id="28_gdeot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0as4c"]
-size = Vector2(304.772, 511.271)
+size = Vector2(188, 511.271)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esc8h"]
-size = Vector2(719.708, 753.397)
+size = Vector2(416, 540)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwwby"]
-size = Vector2(212.468, 259.726)
+size = Vector2(212.468, 572)
 
 [sub_resource type="GDScript" id="GDScript_drkry"]
 script/source = "extends Area2D
@@ -51,26 +59,43 @@ radius = 143.06
 size = Vector2(304.773, 517.826)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puyoj"]
-size = Vector2(720.93, 764.045)
+size = Vector2(292, 524)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e31g7"]
-size = Vector2(200, 260.223)
+size = Vector2(460, 488)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5swp"]
-size = Vector2(196.97, 263.736)
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1qhc"]
+radius = 252.994
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xttjc"]
 size = Vector2(291.228, 511.271)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6d5n"]
-size = Vector2(695.124, 705.882)
+size = Vector2(228, 460)
+
+[sub_resource type="FontFile" id="FontFile_3ydfv"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
 
 [node name="Creation_Screen" type="Node2D"]
 
 [node name="Oxygen" type="Sprite2D" parent="."]
-position = Vector2(899, 112)
-scale = Vector2(0.147651, 0.152561)
-texture = ExtResource("1_lvyfc")
+position = Vector2(400, 112)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_7qk4m")
 script = ExtResource("2_vu4ed")
 
 [node name="Button" type="Button" parent="Oxygen"]
@@ -78,10 +103,10 @@ self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -149.001
-offset_top = -235.971
-offset_right = -149.001
-offset_bottom = -256.971
+offset_left = -96.0
+offset_top = -236.0
+offset_right = -96.0
+offset_bottom = -257.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -89,13 +114,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Oxygen"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Oxygen/Area2D"]
-position = Vector2(3.38623, 0)
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_0as4c")
 
 [node name="Helium" type="Sprite2D" parent="."]
-position = Vector2(984, 113)
-scale = Vector2(0.0819777, 0.103531)
-texture = ExtResource("3_b6e2o")
+position = Vector2(500, 113)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_k7xfv")
 script = ExtResource("4_8wl30")
 
 [node name="Button" type="Button" parent="Helium"]
@@ -114,13 +139,13 @@ metadata/_edit_use_anchors_ = true
 [node name="helium" type="Area2D" parent="Helium"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Helium/helium"]
-position = Vector2(6.09961, 0)
+position = Vector2(-4, -34)
 shape = SubResource("RectangleShape2D_esc8h")
 
 [node name="Xenon" type="Sprite2D" parent="."]
-position = Vector2(1069, 115)
-scale = Vector2(0.263569, 0.334968)
-texture = ExtResource("4_tjb02")
+position = Vector2(600, 115)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_qolln")
 script = ExtResource("2_wf3ta")
 
 [node name="Button" type="Button" parent="Xenon"]
@@ -128,10 +153,10 @@ self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -99.7917
-offset_top = -121.27
-offset_right = -99.7919
-offset_bottom = -142.27
+offset_left = -128.0
+offset_top = -244.0
+offset_right = -128.0
+offset_bottom = -265.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -139,7 +164,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Xenon"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Xenon/Area2D"]
-position = Vector2(0, 1.49268)
+position = Vector2(0, -22)
 shape = SubResource("RectangleShape2D_iwwby")
 
 [node name="Bowl" type="Sprite2D" parent="."]
@@ -157,32 +182,32 @@ shape = SubResource("CircleShape2D_whogs")
 
 [node name="waterBowl" type="Sprite2D" parent="Bowl"]
 visible = false
-texture = ExtResource("9_mj2du")
+texture = ExtResource("9_uiv7y")
 
 [node name="paintBowl" type="Sprite2D" parent="Bowl"]
 visible = false
-texture = ExtResource("10_ro1au")
+texture = ExtResource("10_07n5x")
 
 [node name="soapBowl" type="Sprite2D" parent="Bowl"]
 visible = false
-texture = ExtResource("11_omuax")
+texture = ExtResource("11_utumw")
 
 [node name="xenonBowl" type="Sprite2D" parent="Bowl"]
 visible = false
-texture = ExtResource("12_qolln")
+texture = ExtResource("12_oqmas")
 
 [node name="oxygenBowl" type="Sprite2D" parent="Bowl"]
 visible = false
-texture = ExtResource("13_7qk4m")
+texture = ExtResource("13_xbwhy")
 
 [node name="heliumBowl" type="Sprite2D" parent="Bowl"]
 visible = false
-texture = ExtResource("14_k7xfv")
+texture = ExtResource("14_d0asa")
 
 [node name="Water" type="Sprite2D" parent="."]
-position = Vector2(30, 112)
-scale = Vector2(0.147651, 0.152561)
-texture = ExtResource("1_lvyfc")
+position = Vector2(50, 112)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_mj2du")
 script = ExtResource("9_gb24p")
 
 [node name="Button" type="Button" parent="Water"]
@@ -205,18 +230,19 @@ position = Vector2(-3.38638, 3.27747)
 shape = SubResource("RectangleShape2D_fcvxt")
 
 [node name="Soap" type="Sprite2D" parent="."]
-position = Vector2(90, 112)
-scale = Vector2(0.086, 0.089)
-texture = ExtResource("3_b6e2o")
+position = Vector2(90, 300)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_omuax")
 script = ExtResource("10_1linw")
 
 [node name="Button" type="Button" parent="Soap"]
 self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_top = -0.0235566
+anchor_right = 0.878128
+anchor_bottom = 0.999943
 offset_left = -149.001
-offset_top = -235.971
+offset_top = -255.939
 offset_right = -149.001
 offset_bottom = -256.971
 grow_horizontal = 2
@@ -226,13 +252,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Soap"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Soap/Area2D"]
-position = Vector2(-11.6278, -11.2361)
+position = Vector2(-6, -10)
 shape = SubResource("RectangleShape2D_puyoj")
 
 [node name="Paint" type="Sprite2D" parent="."]
 position = Vector2(175, 112)
-scale = Vector2(0.26, 0.269)
-texture = ExtResource("4_tjb02")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_ro1au")
 script = ExtResource("11_mjt71")
 
 [node name="Button" type="Button" parent="Paint"]
@@ -241,10 +267,10 @@ anchors_preset = -1
 anchor_top = 0.083
 anchor_right = 0.992
 anchor_bottom = 0.944
-offset_left = -100.0
-offset_top = -129.497
-offset_right = -97.44
-offset_bottom = -129.496
+offset_left = -246.154
+offset_top = -243.24
+offset_right = -243.594
+offset_bottom = -243.239
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -252,24 +278,26 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Paint"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paint/Area2D"]
-position = Vector2(-3.8465, 0)
+position = Vector2(-2, 20)
 shape = SubResource("RectangleShape2D_e31g7")
 
 [node name="Tadpoles" type="Sprite2D" parent="."]
-position = Vector2(899, 200)
-scale = Vector2(0.264, 0.273)
-texture = ExtResource("4_tjb02")
+position = Vector2(950, 300)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15_xkuff")
 script = ExtResource("12_fkry1")
 
 [node name="Button" type="Button" parent="Tadpoles"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
-anchor_right = 0.987
-anchor_bottom = 1.0
-offset_left = -106.0
-offset_top = -143.0
-offset_right = -97.465
-offset_bottom = -127.0
+anchor_left = 0.031
+anchor_top = 0.047
+anchor_right = 0.992
+anchor_bottom = 0.937
+offset_left = -255.872
+offset_top = -256.064
+offset_right = -255.904
+offset_bottom = -255.744
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -277,23 +305,24 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Tadpoles"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tadpoles/Area2D"]
-position = Vector2(-3.78784, 3.66321)
-shape = SubResource("RectangleShape2D_c5swp")
+position = Vector2(-20, 4)
+shape = SubResource("CircleShape2D_x1qhc")
 
 [node name="Knife" type="Sprite2D" parent="."]
-position = Vector2(750, 200)
-scale = Vector2(0.147651, 0.152561)
-texture = ExtResource("1_lvyfc")
+position = Vector2(850, 100)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17_gvx3u")
 script = ExtResource("13_tjysm")
 
 [node name="Button" type="Button" parent="Knife"]
 self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -149.001
-offset_top = -235.971
-offset_right = -149.001
+anchors_preset = -1
+anchor_left = 0.209
+anchor_right = 0.781
+anchor_bottom = 0.999943
+offset_left = -256.008
+offset_top = -236.0
+offset_right = -255.872
 offset_bottom = -256.971
 grow_horizontal = 2
 grow_vertical = 2
@@ -306,9 +335,9 @@ position = Vector2(-3.38525, 0)
 shape = SubResource("RectangleShape2D_xttjc")
 
 [node name="Glitter" type="Sprite2D" parent="."]
-position = Vector2(828, 201)
-scale = Vector2(0.082, 0.085)
-texture = ExtResource("3_b6e2o")
+position = Vector2(1050, 100)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("19_bfj2x")
 script = ExtResource("14_fo1qt")
 
 [node name="Button" type="Button" parent="Glitter"]
@@ -317,10 +346,10 @@ anchors_preset = -1
 anchor_left = 0.031
 anchor_right = 1.0
 anchor_bottom = 0.999
-offset_left = -367.816
-offset_top = -367.0
-offset_right = -350.0
-offset_bottom = -368.264
+offset_left = -139.936
+offset_top = -248.0
+offset_right = -122.12
+offset_bottom = -249.264
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -328,8 +357,71 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Glitter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Glitter/Area2D"]
-position = Vector2(6.09961, 0)
+position = Vector2(-2, -2)
 shape = SubResource("RectangleShape2D_u6d5n")
+
+[node name="Reset" type="ColorRect" parent="."]
+offset_left = 42.0
+offset_top = 468.0
+offset_right = 289.0
+offset_bottom = 561.0
+script = ExtResource("27_05d13")
+
+[node name="Label" type="Label" parent="Reset"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.989
+offset_left = 20.0
+offset_top = -12.0
+offset_right = -11.0
+offset_bottom = 4.02299
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_3ydfv")
+theme_override_font_sizes/font_size = 80
+text = "RESET"
+
+[node name="Button" type="Button" parent="Reset"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+
+[node name="Create" type="ColorRect" parent="."]
+offset_left = 798.0
+offset_top = 464.0
+offset_right = 1073.0
+offset_bottom = 557.0
+script = ExtResource("28_gdeot")
+
+[node name="Label" type="Label" parent="Create"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.989
+offset_left = 2.0
+offset_top = -11.0
+offset_right = 21.0
+offset_bottom = 5.02299
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_3ydfv")
+theme_override_font_sizes/font_size = 80
+text = "CREATE"
+
+[node name="Button" type="Button" parent="Create"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="button_down" from="Oxygen/Button" to="Oxygen" method="_on_button_button_down"]
 [connection signal="button_up" from="Oxygen/Button" to="Oxygen" method="_on_button_button_up"]
@@ -358,3 +450,4 @@ shape = SubResource("RectangleShape2D_u6d5n")
 [connection signal="button_down" from="Glitter/Button" to="Glitter" method="_on_button_button_down"]
 [connection signal="button_up" from="Glitter/Button" to="Glitter" method="_on_button_button_up"]
 [connection signal="area_shape_entered" from="Glitter/Area2D" to="Bowl" method="_on_area_2d_area_shape_entered"]
+[connection signal="pressed" from="Reset/Button" to="Reset" method="_on_button_pressed"]

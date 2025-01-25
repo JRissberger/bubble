@@ -11,7 +11,7 @@ var glitterBowl;
 var knifeBowl;
 
 func _ready() -> void:
-	waterBowl = get_node("waterBowl")
+	waterBowl = get_node("waterBowl");
 	paintBowl = get_node("paintBowl");
 	soapBowl = get_node("soapBowl");
 	xenonBowl = get_node("xenonBowl");

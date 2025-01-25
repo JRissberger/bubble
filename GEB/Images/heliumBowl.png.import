@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7gg6mbrei57x"
-path="res://.godot/imported/red3.jpg-ba0af73579713e6acd1c2fdf6d53eabc.ctex"
+uid="uid://d10pm7d6c8pjt"
+path="res://.godot/imported/heliumBowl.png-b6ed1cc27050b8390dfd706d751eae26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/red3.jpg"
-dest_files=["res://.godot/imported/red3.jpg-ba0af73579713e6acd1c2fdf6d53eabc.ctex"]
+source_file="res://Images/heliumBowl.png"
+dest_files=["res://.godot/imported/heliumBowl.png-b6ed1cc27050b8390dfd706d751eae26.ctex"]
 
 [params]
 
