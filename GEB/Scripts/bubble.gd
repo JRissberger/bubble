@@ -44,9 +44,11 @@ func _ready() -> void:
 func hit(attack: int) -> void:
 	self.health -= attack
 
+func _process(delta: float) -> void:
+	apply_central_force(linear_velocity.normalized() * 0.02)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	apply_central_force(linear_velocity.normalized() * 0.02)
 	var collis = move_and_collide(linear_velocity * delta)
 	if collis:
 		linear_velocity = linear_velocity.bounce(collis.get_normal())

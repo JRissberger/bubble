@@ -21,3 +21,7 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	dragging = false
+
+
+func _on_button_pressed() -> void:
+	self.position = Vector2(950, 300);

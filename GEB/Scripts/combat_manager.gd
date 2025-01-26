@@ -1,6 +1,5 @@
 extends Node
 
-
 @export var bubble1: bubble
 @export var bubble2: bubble
 @export var popup: ColorRect
