@@ -11,6 +11,8 @@ var currentObject = "none";
 #holds an array of what sprites need to be active when creating a bubble
 #has options for none, and the 3 options for each category. 
 var sprites = [1,0,0,0,0,0,0,0,0,0];
+
+#sprites for the current player bubble
 var playerSprites = [1,0,0,0,0,0,0,0,0,0];
 #holding enemy stats since there's some issue with moving data around between class objects
 var enemyhp = 5;

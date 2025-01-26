@@ -8,7 +8,7 @@ extends Node
 @export var label2 : Label;
 @export var parent : Node2D;
 
-#TODO: set up two arrays, getnode for all sprites of bubble1, bubble2
+#these hold all the node references to the possible sprites for bubbles
 var bubble1Sprites;
 var bubble2Sprites;
 #storing max hp for transfer from player to enemy bubble
@@ -29,7 +29,7 @@ func update():
 			BubbleManager.enemyhp = bubbleMaxHp; #store MAX hp not current
 			BubbleManager.enemySpd = bubble1.Spd_mult;
 			BubbleManager.enemyRadius = bubble1.Radius;
-			BubbleManager.enemySprites = bubble1.ActiveSprites;
+			BubbleManager.enemySprites = BubbleManager.playerSprites;
 		else:
 			bubble2.winner = true;
 			popup.game_over(bubble2);
@@ -90,27 +90,22 @@ func _ready() -> void:
 			BubbleManager.bubbles[b] = bubble2;
 	
 	#assigning visible sprites
-	#retrieve BubbleManager.bubbles[0] sprite array
-	#var playerBubbleSprites = BubbleManager.bubbles[0].ActiveSprites;
-	#TODO: active sprites is resetting to default somewhere
-	
-	#gets references to all the sprites for bubble1
+	#gets references to all the sprites for bubble1 (player) and bubble2 (enemy)
 	bubble1Sprites = [get_node("Bubble1/empty"), get_node("Bubble1/blue"), get_node("Bubble1/orange"), 
 	get_node("Bubble1/green"), get_node("Bubble1/xenon"),
 	get_node("Bubble1/oxygen"), get_node("Bubble1/helium"), get_node("Bubble1/tadpoles"), get_node("Bubble1/glitter"),
 	get_node("Bubble1/knife")];
+	bubble2Sprites = [get_node("Bubble2/empty"), get_node("Bubble2/blue"), get_node("Bubble2/orange"), 
+	get_node("Bubble2/green"), get_node("Bubble2/xenon"),
+	get_node("Bubble2/oxygen"), get_node("Bubble2/helium"), get_node("Bubble2/tadpoles"), get_node("Bubble2/glitter"),
+	get_node("Bubble2/knife")];
 	#for loop, if sprite array is 1, sets corresponding sprite in bubble1 array to visible
-	#bubble1Sprites[3].visible = true;
 	for i in 10:
 		if BubbleManager.playerSprites[i] == 1:
 			bubble1Sprites[i].visible = true;
-	#for i in 10:
-		#if playerBubbleSprites[i] == 1:
-			#bubble1Sprites[i].visible = true;
-		#else:
-			#bubble1Sprites[i].visible = false;
-		#bubble1Sprites[i].visible = false;
-	#do the same for bubble2
+	for i in 10: 
+		if BubbleManager.enemySprites[i] == 1:
+			bubble2Sprites[i].visible = true;
 
 
 

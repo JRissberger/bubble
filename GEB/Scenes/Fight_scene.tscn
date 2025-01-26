@@ -116,11 +116,66 @@ parent = NodePath("..")
 title = "Previous"
 
 [node name="Sprite2D" type="Sprite2D" parent="Bubble2"]
+visible = false
 texture = SubResource("PlaceholderTexture2D_klq6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bubble2"]
 shape = SubResource("CircleShape2D_xvgsc")
 debug_color = Color(0, 0.592157, 0.752941, 1)
+
+[node name="empty" type="Sprite2D" parent="Bubble2"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_5qbc2")
+
+[node name="green" type="Sprite2D" parent="Bubble2"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1otc1")
+
+[node name="blue" type="Sprite2D" parent="Bubble2"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_v4m6f")
+
+[node name="orange" type="Sprite2D" parent="Bubble2"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_nwabe")
+
+[node name="helium" type="Sprite2D" parent="Bubble2"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_l4iot")
+
+[node name="oxygen" type="Sprite2D" parent="Bubble2"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_jwnww")
+
+[node name="xenon" type="Sprite2D" parent="Bubble2"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mijwh")
+
+[node name="tadpoles" type="Sprite2D" parent="Bubble2"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_mw5p1")
+
+[node name="glitter" type="Sprite2D" parent="Bubble2"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_g3aq5")
+
+[node name="knife" type="Sprite2D" parent="Bubble2"]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_g8kx3")
 
 [node name="Walls" type="Node" parent="."]
 
@@ -153,6 +208,7 @@ rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_d7j8s")
 
 [node name="Control" type="Control" parent="."]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = -189.0
@@ -179,6 +235,7 @@ offset_bottom = 46.0
 
 [node name="Popup" type="ColorRect" parent="."]
 visible = false
+z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
