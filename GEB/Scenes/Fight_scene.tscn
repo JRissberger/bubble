@@ -15,12 +15,15 @@ radius = 75.0
 normal = Vector2(1, 0)
 distance = 27.9983
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("bubble1", "bubble2", "popup")]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("bubble1", "bubble2", "popup", "label1", "label2", "parent")]
 position = Vector2(186, 391)
 script = ExtResource("1_axjmf")
 bubble1 = NodePath("Bubble1")
 bubble2 = NodePath("Bubble2")
 popup = NodePath("Popup")
+label1 = NodePath("Control/Label1")
+label2 = NodePath("Control/Label2")
+parent = NodePath(".")
 
 [node name="Bubble1" type="RigidBody2D" parent="." node_paths=PackedStringArray("label", "parent")]
 position = Vector2(62, 39)

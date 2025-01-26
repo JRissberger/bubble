@@ -1,24 +1,25 @@
 extends Node
 
-var newBubble = bubble.new();
-var opponentBubble = bubble.new();
+var newBubble:bubble = bubble.new(5, 5, 1, 70);
+var opponentBubble:bubble = bubble.new(5, 5, 1, 70);
+
 #tracks the current held object
 #this is here exclusively because I'm fighting for my life with signals and I don't have the time for that
 #this approach would NOT get a good grade for coding standards my bad
 var currentObject = "none";
 
 #where all of the bubble objects will be stored
-var bubbles = [];
+var bubbles:Array = [];
 
 #tracks what's currently been added to the bubble
-var gasAdded = false;
-var liquidAdded = false;
-var otherAdded = false;
+var gasAdded:bool = false;
+var liquidAdded:bool = false;
+var otherAdded:bool = false;
 
 #RNG
 var random = RandomNumberGenerator.new();
-var statUpperLimit = 15;
-var radiusUpperLimit = 90;
+var statUpperLimit:int = 15;
+var radiusUpperLimit:int = 90;
 
 func _ready():
 	
@@ -30,6 +31,7 @@ func _ready():
 #reset the newBubble variable to a fresh bubble
 func createBubble():
 	#TODO: do we want to check and make sure the player has added one of each type?
+	#if(opponentBubble != null): 	BubbleManager.clearBubbles();
 	newBubble.playerCreated = true;
 	#store the bubble into the list of bubbles we have on hand
 	bubbles.push_back(newBubble);
@@ -39,7 +41,7 @@ func createBubble():
 #resets the newBubble object.
 func resetBubble():
 	#clear the bubble
-	newBubble = bubble.new();
+	newBubble = bubble.new(5, 5, 1, 70);
 	gasAdded = false;
 	liquidAdded = false;
 	otherAdded = false;
@@ -51,25 +53,28 @@ func createEnemyBubble():
 	var hp = random.randi() % statUpperLimit + 1;
 	var spd_mult = random.randi() % statUpperLimit + 1;
 	var radius = random.randi() % radiusUpperLimit + 30;
-	var enemyBubble = bubble.new(hp, spd_mult, atk, radius);
-	bubbles.push_back(enemyBubble);
+	opponentBubble = bubble.new(hp, spd_mult, atk, radius);
+	if(bubbles[0] == null): 
+		bubbles[0] = opponentBubble;
+	else: bubbles.push_back(opponentBubble);
 	
 #call this function when the match is over
 func clearBubbles():
-	var winningBubble;
-	
 	#loop through all the bubbles to find the one marked as a winner
 	#seems silly since currently it is just 1 v 1 bubble duels, 
 	#however this is in consideration if we make it to battle royale implementation
 	for b in bubbles.size():
-		if(bubbles[b].winner):
-			winningBubble = bubbles[b];
+		if(bubbles[b].winner == true):
+			opponentBubble = bubbles[b];
 	
 	#reset the winning bubble. 
 	#If the player made this bubble, it is no longer theirs
-	winningBubble.playerCreated = false;
-	winningBubble.winner = false;
+	opponentBubble.playerCreated = false;
+	opponentBubble.winner = false;
 	#clear the bubbles list
 	bubbles = [];
 	#add back the winning bubble
-	bubbles.push_back(winningBubble);
+	bubbles.push_front(opponentBubble);
+	#somehow when switching to creation scene, all elements 
+	#in the bubbles array gets lost. it's not a scope issue
+	
