@@ -32,6 +32,7 @@ func _ready() -> void:
 	tadpoleBowl = get_node("tadpoleBowl");
 	bowlImages = [waterBowl, paintBowl, soapBowl, xenonBowl, oxygenBowl, heliumBowl, glitterBowl, knifeBowl, tadpoleBowl];
 	popUp = get_node("AlreadyAdded");
+	add_child(sound_player);
 	
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	#determines what to update in manager based on held object

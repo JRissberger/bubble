@@ -66,6 +66,7 @@ func _init(hp:=5, spd_mult:=5, atk:=1, radius:=70):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_child(sound_player);
 	apply_central_force(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * spd_mult)
 	print(BubbleManager.playerSpd)
 	#label.text = str("Health: ", hp);
