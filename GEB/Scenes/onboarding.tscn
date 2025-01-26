@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyluhp3rdqbsm"]
+
+[ext_resource type="Texture2D" uid="uid://dwpg4clss3ggy" path="res://Images/Table.png" id="1_y27xu"]
+[ext_resource type="Script" path="res://Scripts/toCreate.gd" id="2_47slr"]
+[ext_resource type="Texture2D" uid="uid://d1c7bjoosu83r" path="res://Images/blueBubble.png" id="2_ni7jt"]
+[ext_resource type="Texture2D" uid="uid://cr5f54n1nwcd6" path="res://Images/greenBubble.png" id="3_y553g"]
+[ext_resource type="Texture2D" uid="uid://dt2d4utc8frja" path="res://Images/orangeBubble.png" id="4_fnfr0"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(575, 323)
+scale = Vector2(1.01, 1)
+texture = ExtResource("1_y27xu")
+
+[node name="BlueBubble" type="Sprite2D" parent="Table"]
+position = Vector2(-411.881, -162)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("2_ni7jt")
+
+[node name="BlueBubble3" type="Sprite2D" parent="Table"]
+position = Vector2(92.0792, 121)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("2_ni7jt")
+
+[node name="BlueBubble2" type="Sprite2D" parent="Table"]
+position = Vector2(538.614, -24)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("2_ni7jt")
+
+[node name="GreenBubble" type="Sprite2D" parent="Table"]
+position = Vector2(287.129, -169)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("3_y553g")
+
+[node name="GreenBubble2" type="Sprite2D" parent="Table"]
+position = Vector2(-533.663, 351)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("3_y553g")
+
+[node name="GreenBubble3" type="Sprite2D" parent="Table"]
+position = Vector2(-126.733, -318)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("3_y553g")
+
+[node name="OrangeBubble2" type="Sprite2D" parent="Table"]
+position = Vector2(560.396, -377)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("4_fnfr0")
+
+[node name="OrangeBubble3" type="Sprite2D" parent="Table"]
+position = Vector2(380.198, 264)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("4_fnfr0")
+
+[node name="OrangeBubble" type="Sprite2D" parent="Table"]
+position = Vector2(-312.871, 70)
+scale = Vector2(0.990099, 1)
+texture = ExtResource("4_fnfr0")
+
+[node name="Popup" type="ColorRect" parent="."]
+offset_left = 375.0
+offset_top = 101.0
+offset_right = 764.0
+offset_bottom = 403.0
+color = Color(0, 0.227451, 0.239216, 1)
+
+[node name="Button" type="Button" parent="Popup"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 335.0
+offset_right = 404.0
+offset_bottom = 422.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "START CREATING"
+script = ExtResource("2_47slr")
+
+[node name="Header" type="Label" parent="Popup"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 380.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 30
+text = "HOW TO START:"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="Popup"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.0
+offset_right = 386.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 20
+text = "Mix and match a liquid, gas, and 
+object to make the bubble of 
+your dreams!
+
+Your bubble will then fight an 
+opposing bubble. The winning bubble 
+will be your next bubble's opponent.
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Popup/Button" to="Popup/Button" method="_on_pressed"]
