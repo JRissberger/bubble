@@ -18,7 +18,7 @@ var playerSpd;
 
 #holding enemy stats since there's some issue with moving data around between class objects
 var enemyhp = 5;
-var enemySpd = 10;
+var enemySpd = 5;
 var enemyAtk = 1;
 var enemyRadius = 70;
 var enemySprites = [1,0,0,0,0,0,0,0,0,0,];

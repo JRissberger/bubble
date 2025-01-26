@@ -49,7 +49,7 @@ var Radius:
 		#activeSprites = value;
 
 
-func _init(hp:=5, spd_mult:=10, atk:=1, radius:=70):
+func _init(hp:=5, spd_mult:=5, atk:=1, radius:=70):
 #func _init(hp, spd_mult, atk, radius):
 	self.health = hp
 	self.spd_mult = spd_mult
@@ -63,6 +63,7 @@ func _init(hp:=5, spd_mult:=10, atk:=1, radius:=70):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	apply_central_force(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * spd_mult)
+	print(BubbleManager.playerSpd)
 	#label.text = str("Health: ", hp);
 	#label.text = str(hp);
 
@@ -72,7 +73,6 @@ func hit(attack: int) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
 	apply_central_force(linear_velocity.normalized() * 0.02)
 	collis = move_and_collide(linear_velocity * delta)
 	if collis:
