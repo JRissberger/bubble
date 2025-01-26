@@ -496,6 +496,7 @@ horizontal_alignment = 1
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("35_wcm83")
+volume_db = -30.0
 autoplay = true
 parameters/looping = false
 
