@@ -34,19 +34,19 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	#Flat adding to the stats so resetting is easier
 	if BubbleManager.currentObject == "xenon" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.Spd_mult = 6;
+		BubbleManager.newBubble.Spd_mult = 10;
 		BubbleManager.sprites[4] = 1;
 		xenonBowl.visible = true;
 	
 	if BubbleManager.currentObject == "oxygen" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.Spd_mult = 8;
+		BubbleManager.newBubble.Spd_mult = 13;
 		BubbleManager.sprites[5] = 1;
 		oxygenBowl.visible = true;
 	
 	if BubbleManager.currentObject == "helium" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.Spd_mult = 10;
+		BubbleManager.newBubble.Spd_mult = 15;
 		BubbleManager.sprites[6] = 1;
 		heliumBowl.visible = true;
 	
