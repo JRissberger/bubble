@@ -8,4 +8,4 @@ Julia Rissberger: Development, 2D Art <br/>
 Jamie Zheng: Development, 2D Art <br/>
 Nick "Baschfire" Basch: Audio, Music <br/><br/>
 
-Created during the 2025 Global Game Jam
+Created during the 2025 Global Game Jam.
