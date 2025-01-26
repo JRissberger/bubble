@@ -1,4 +1,7 @@
 class_name bubble extends RigidBody2D
+@export var label: Label
+@export var parent: Node2D
+@export var title: String
 var atk
 var health
 var hp
@@ -36,19 +39,20 @@ func _init(hp=5, spd_mult=5, atk=1, radius=70):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	apply_central_force(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * spd_mult)
-
+	label.text = str("Health: ", health)
 
 func hit(attack: int) -> void:
 	self.health -= attack
 
+func _process(delta: float) -> void:
+	apply_central_force(linear_velocity.normalized() * 0.02)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	apply_central_force(linear_velocity.normalized() * 0.02)
 	var collis = move_and_collide(linear_velocity * delta)
 	if collis:
 		linear_velocity = linear_velocity.bounce(collis.get_normal())
 		if collis.get_collider().has_method("hit"):
 			collis.get_collider().hit(atk)
-		if health <= 0:
-			pass	#TODO: when health 0, ????
-		
+			label.text = str("Health: ", health)
+			parent.update()

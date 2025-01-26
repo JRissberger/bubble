@@ -1,6 +1,8 @@
 extends Node
 
-
+@export var bubble1: bubble
+@export var bubble2: bubble
+@export var popup: ColorRect
 # Called when the node enters the scene tree for the first time.
 
 func update():
