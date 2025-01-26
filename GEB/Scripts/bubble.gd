@@ -25,10 +25,6 @@ var playerCreated:bool; #bool
 var winner:bool; #bool
 var isPlayer:bool;
 var collis;
-
-#sound effects
-var sound_player := AudioStreamPlayer.new();
-
 #var activeSprites: Array = [];
 #array order is none, water, paint, soap, xenon, oxygen, helium, tadpoles, glitter, knife 
 var Spd_mult:
@@ -53,7 +49,7 @@ var Radius:
 		#activeSprites = value;
 
 
-func _init(hp:=5, spd_mult:=5, atk:=1, radius:=70):
+func _init(hp:=5, spd_mult:=15, atk:=1, radius:=70):
 #func _init(hp, spd_mult, atk, radius):
 	self.health = hp
 	self.spd_mult = spd_mult
@@ -81,8 +77,4 @@ func _physics_process(delta: float) -> void:
 	apply_central_force(linear_velocity.normalized() * 0.02)
 	collis = move_and_collide(linear_velocity * delta)
 	if collis:
-		linear_velocity = linear_velocity.bounce(collis.get_normal());
-		#play soundeffects
-		var sound_effect = load("res://Audio/Bump 01c.mp3");
-		sound_player.stream = sound_effect;
-		sound_player.play();
+		linear_velocity = linear_velocity.bounce(collis.get_normal())
