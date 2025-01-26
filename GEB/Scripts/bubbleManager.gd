@@ -22,7 +22,7 @@ var enemyRadius = 70;
 var enemySprites = [1,0,0,0,0,0,0,0,0,0,];
 
 #where all of the bubble objects will be stored
-var bubbles:Array = [];
+var bubbles:Array[bubble] = [];
 
 #tracks what's currently been added to the bubble
 var gasAdded:bool = false;
