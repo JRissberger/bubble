@@ -11,6 +11,9 @@ var glitterBowl;
 var knifeBowl;
 var bowlImages;
 
+var spd = 5;
+var hp = 5;
+var atk = 4;
 
 #display for if an element is added of a category already filled
 var popUp;
@@ -31,64 +34,89 @@ func _ready() -> void:
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	#determines what to update in manager based on held object
 	#I apologize for the if statements this is gonna be messy
-	#Flat adding to the stats so resetting is easier
 	if BubbleManager.currentObject == "xenon" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.spd_mult = 10;
+		spd = spd + 20
+		hp = hp - 1;
+		#BubbleManager.newBubble.hp -= 1;
 		BubbleManager.sprites[4] = 1;
 		xenonBowl.visible = true;
 	
 	if BubbleManager.currentObject == "oxygen" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.spd_mult = 13;
+		spd = spd + 25;
+		hp = hp - 2;
+		#BubbleManager.newBubble.hp -= 2;
 		BubbleManager.sprites[5] = 1;
 		oxygenBowl.visible = true;
 	
 	if BubbleManager.currentObject == "helium" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.spd_mult = 15;
+		spd = spd + 30;
+		hp = hp - 3;
+		#BubbleManager.newBubble.hp -= 3;
 		BubbleManager.sprites[6] = 1;
 		heliumBowl.visible = true;
 	
 	if BubbleManager.currentObject == "water" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.newBubble.hp = 6;
+		hp = hp + 1;
+		atk = atk - 2;
+		#BubbleManager.newBubble.hp += 1;
+		#BubbleManager.newBubble.Spd_mult -= 2;
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[1] = 1;
 		waterBowl.visible = true;
 	
 	if BubbleManager.currentObject == "paint" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.newBubble.hp = 8;
+		hp = hp + 3;
+		atk = atk - 3;
+		#BubbleManager.newBubble.hp += 3;
+		#BubbleManager.newBubble.Spd_mult -= 3;
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[2] = 1;
 		paintBowl.visible = true;
 	
 	if BubbleManager.currentObject == "soap" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.newBubble.hp = 10;
+		hp = hp + 5;
+		atk = atk - 1;
+		#BubbleManager.newBubble.hp += 5;
+		#BubbleManager.newBubble.Spd_mult -= 4;
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[3] = 1;
 		soapBowl.visible = true;
 	
 	if BubbleManager.currentObject == "tadpoles" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.newBubble.atk = 2;
+		#BubbleManager.newBubble.atk += 1;
+		atk = atk + 1;
+		spd =  spd - 2;
 		BubbleManager.sprites[7] = 1;
 		tadpoleBowl.visible = true;
 	
 	if BubbleManager.currentObject == "glitter" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.newBubble.atk = 3;
-		BubbleManager.sprites[8] = 1
+		#BubbleManager.newBubble.atk += 2;
+		atk = atk + 2;
+		spd = spd - 3;
+		BubbleManager.sprites[8] = 1;
 		glitterBowl.visible = true;
 	
 	if BubbleManager.currentObject == "knife" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.newBubble.atk = 4;
-		BubbleManager.sprites[9] = 1
+		#BubbleManager.newBubble.atk += 3;
+		atk = atk + 3;
+		spd = spd - 5;
+		BubbleManager.sprites[9] = 1;
 		knifeBowl.visible = true;
 	
+	BubbleManager.newBubble.atk = atk;
+	BubbleManager.newBubble.spd_mult = spd;
+	BubbleManager.playerSpd = spd;
+	BubbleManager.newBubble.hp = hp;
+
 	#with how often the signal is sent, this is popping up regardless. will look at later
 	#if BubbleManager.gasAdded && (BubbleManager.currentObject == "helium" || 
 	#BubbleManager.currentObject == "oxygen" || BubbleManager.currentObject == "xenon"):

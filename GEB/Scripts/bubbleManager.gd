@@ -14,6 +14,8 @@ var sprites = [1,0,0,0,0,0,0,0,0,0];
 
 #sprites for the current player bubble
 var playerSprites = [1,0,0,0,0,0,0,0,0,0];
+var playerSpd;
+
 #holding enemy stats since there's some issue with moving data around between class objects
 var enemyhp = 5;
 var enemySpd = 5;
@@ -69,7 +71,7 @@ func createEnemyBubble():
 	var spd_mult = enemySpd#random.randi() % statUpperLimit + 1;
 	var radius = enemyRadius#random.randi() % radiusUpperLimit + 30;
 	opponentBubble = bubble.new(hp, spd_mult, atk, radius);
-	if(bubbles.size() == 0 || bubbles[0] == null): 
+	if(bubbles[0] == null): 
 		bubbles[0] = opponentBubble;
 	else: bubbles.push_back(opponentBubble);
 	

@@ -23,6 +23,7 @@ var spd_mult:int;
 var radius:int;
 var playerCreated:bool; #bool
 var winner:bool; #bool
+var isPlayer:bool;
 var collis;
 #var activeSprites: Array = [];
 #array order is none, water, paint, soap, xenon, oxygen, helium, tadpoles, glitter, knife 
@@ -56,11 +57,13 @@ func _init(hp:=5, spd_mult:=5, atk:=1, radius:=70):
 	self.radius = radius
 	self.playerCreated = false;
 	self.winner = false;
+	self.isPlayer = false;
 	#self.activeSprites = [1,0,0,0,0,0,0,0,0,0];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	apply_central_force(Vector2(randf_range(-1, 1), randf_range(-1, 1)) * spd_mult)
+	print(BubbleManager.playerSpd)
 	#label.text = str("Health: ", hp);
 	#label.text = str(hp);
 

@@ -71,6 +71,8 @@ func _ready() -> void:
 			bubble1.playerCreated = currentBubble.playerCreated;
 			bubble1.winner = currentBubble.winner;
 			bubble1.label.text = str("Health: ", bubble1.hp);
+			bubble1.isPlayer = true;
+			print(bubble1.isPlayer)
 			bubbleMaxHp = currentBubble.hp; #records max hp at creation, used to create next round enemy if needed
 			#replace this bubble with what is in the bubble manager
 			BubbleManager.bubbles[b] = bubble1;
@@ -88,6 +90,8 @@ func _ready() -> void:
 			bubble2.playerCreated = false; #currentBubble.playerCreated;
 			#bubble2.ActiveSprites = BubbleManager.enemySprites;
 			bubble2.winner = currentBubble.winner;
+			bubble2.isPlayer = false;
+			print("opponent", bubble2.isPlayer)
 			bubble2.label.text = str("Health: ", bubble2.hp);
 			BubbleManager.bubbles[b] = bubble2;
 	
