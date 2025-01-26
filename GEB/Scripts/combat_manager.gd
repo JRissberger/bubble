@@ -18,6 +18,9 @@ var bubble1ActiveSprites
 var bubblePrefab = preload("res://Prefabs/bubblePrefab.tscn");
 var timer = 0;
 
+#audio player
+var sound_player := AudioStreamPlayer.new();
+
 func update():
 	if (bubble1.hp <= 0 || bubble2.hp <= 0):
 		bubble1.set_physics_process(false)
@@ -33,15 +36,20 @@ func update():
 			BubbleManager.enemySpd = bubble1.spd_mult;
 			BubbleManager.enemyRadius = bubble1.Radius;
 			BubbleManager.enemySprites = BubbleManager.playerSprites;
+			var sound_effect = load("res://Audio/Pop 01a.mp3");
+			sound_player.stream = sound_effect;
+			sound_player.play();
 		else:
 			bubble2.winner = true;
 			popup.game_over(bubble2);
-			
-			#make sure health stat is reflected accurately.
-		
+			var sound_effect = load("res://Audio/Pop 01b.mp3");
+			sound_player.stream = sound_effect;
+			sound_player.play();
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#set up sound player for bubble collision
+	add_child(sound_player);
 	
 	#check if this is the first match
 	if(BubbleManager.bubbles.size() <= 1): BubbleManager.createEnemyBubble();
@@ -129,12 +137,22 @@ func _process(delta: float) -> void:
 			bubble1.label.text = str("Health: ", bubble1.hp);
 			bubble2.label.text = str("Health: ", bubble2.hp);
 			
+			#play sound effect
+			var sound_effect = load("res://Audio/Bump 01a.mp3");
+			sound_player.stream = sound_effect;
+			sound_player.play();
+			
 		elif (bubble2.collis != null && bubble2.collis.get_collider().has_method("hit")):
 			bubble1.hit(bubble2.atk);
 			bubble2.hit(bubble1.atk);
 			
 			bubble1.label.text = str("Health: ", bubble1.hp);
 			bubble2.label.text = str("Health: ", bubble2.hp);
+			
+			#play sound effect
+			var sound_effect = load("res://Audio/Bump 01b.mp3");
+			sound_player.stream = sound_effect;
+			sound_player.play();
 		update();
 		
 	

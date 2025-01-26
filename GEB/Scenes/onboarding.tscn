@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyluhp3rdqbsm"]
+[gd_scene load_steps=7 format=3 uid="uid://cyweoy78umx8q"]
 
 [ext_resource type="Texture2D" uid="uid://dwpg4clss3ggy" path="res://Images/Table.png" id="1_y27xu"]
 [ext_resource type="Script" path="res://Scripts/toCreate.gd" id="2_47slr"]
 [ext_resource type="Texture2D" uid="uid://d1c7bjoosu83r" path="res://Images/blueBubble.png" id="2_ni7jt"]
 [ext_resource type="Texture2D" uid="uid://cr5f54n1nwcd6" path="res://Images/greenBubble.png" id="3_y553g"]
 [ext_resource type="Texture2D" uid="uid://dt2d4utc8frja" path="res://Images/orangeBubble.png" id="4_fnfr0"]
+[ext_resource type="AudioStream" uid="uid://drus3wrme1vvl" path="res://Audio/Crafting Music.mp3" id="6_ex5cj"]
 
 [node name="Test" type="Node2D"]
 
@@ -103,5 +104,10 @@ opposing bubble. The winning bubble
 will be your next bubble's opponent.
 "
 horizontal_alignment = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ex5cj")
+volume_db = -35.0
+autoplay = true
 
 [connection signal="pressed" from="Popup/Button" to="Popup/Button" method="_on_pressed"]

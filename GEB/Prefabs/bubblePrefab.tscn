@@ -10,12 +10,11 @@ radius = 75.0
 
 [node name="Test" type="Node2D"]
 
-[node name="Bubble1" type="RigidBody2D" parent="." node_paths=PackedStringArray("label", "parent")]
+[node name="Bubble1" type="RigidBody2D" parent="." node_paths=PackedStringArray("parent")]
 position = Vector2(62, 39)
 mass = 0.001
 gravity_scale = 0.0
 script = ExtResource("1_2ubda")
-label = NodePath("")
 parent = NodePath("..")
 title = "New"
 
