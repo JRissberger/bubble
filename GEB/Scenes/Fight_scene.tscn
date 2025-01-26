@@ -1,9 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://d076dy863m1he"]
+[gd_scene load_steps=18 format=3 uid="uid://d076dy863m1he"]
 
 [ext_resource type="Script" path="res://Scripts/combat_manager.gd" id="1_axjmf"]
 [ext_resource type="Script" path="res://Scripts/bubble.gd" id="1_o7i4n"]
 [ext_resource type="Script" path="res://Scripts/gameover_popup.gd" id="2_u074s"]
+[ext_resource type="Texture2D" uid="uid://ccha1udv1bxuy" path="res://Images/emptyBubble.png" id="3_5qbc2"]
 [ext_resource type="Script" path="res://Scripts/toCreate.gd" id="3_deene"]
+[ext_resource type="Texture2D" uid="uid://cr5f54n1nwcd6" path="res://Images/greenBubble.png" id="4_1otc1"]
+[ext_resource type="Texture2D" uid="uid://d1c7bjoosu83r" path="res://Images/blueBubble.png" id="5_v4m6f"]
+[ext_resource type="Texture2D" uid="uid://dt2d4utc8frja" path="res://Images/orangeBubble.png" id="6_nwabe"]
+[ext_resource type="Texture2D" uid="uid://07crmpxufgnf" path="res://Images/glitterBowl.png" id="7_g3aq5"]
+[ext_resource type="Texture2D" uid="uid://dsjkd4413a36u" path="res://Images/knifeBowl.png" id="8_g8kx3"]
+[ext_resource type="Texture2D" uid="uid://bxhp3prtqtg4k" path="res://Images/tadpoleBowl.png" id="9_mw5p1"]
+[ext_resource type="Texture2D" uid="uid://buhmdb51xy7on" path="res://Images/oxygenBowl.png" id="10_jwnww"]
+[ext_resource type="Texture2D" uid="uid://bk42cwctjuhjp" path="res://Images/xenonBowl.png" id="11_mijwh"]
+[ext_resource type="Texture2D" uid="uid://d10pm7d6c8pjt" path="res://Images/heliumBowl.png" id="12_l4iot"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_klq6h"]
 size = Vector2(150, 150)
@@ -35,11 +45,66 @@ parent = NodePath("..")
 title = "New"
 
 [node name="Sprite2D" type="Sprite2D" parent="Bubble1"]
+visible = false
 texture = SubResource("PlaceholderTexture2D_klq6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bubble1"]
 shape = SubResource("CircleShape2D_xvgsc")
 debug_color = Color(0, 0.592157, 0.752941, 1)
+
+[node name="empty" type="Sprite2D" parent="Bubble1"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_5qbc2")
+
+[node name="green" type="Sprite2D" parent="Bubble1"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1otc1")
+
+[node name="blue" type="Sprite2D" parent="Bubble1"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_v4m6f")
+
+[node name="orange" type="Sprite2D" parent="Bubble1"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_nwabe")
+
+[node name="glitter" type="Sprite2D" parent="Bubble1"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_g3aq5")
+
+[node name="knife" type="Sprite2D" parent="Bubble1"]
+visible = false
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_g8kx3")
+
+[node name="tadpoles" type="Sprite2D" parent="Bubble1"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_mw5p1")
+
+[node name="oxygen" type="Sprite2D" parent="Bubble1"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_jwnww")
+
+[node name="xenon" type="Sprite2D" parent="Bubble1"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mijwh")
+
+[node name="helium" type="Sprite2D" parent="Bubble1"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_l4iot")
 
 [node name="Bubble2" type="RigidBody2D" parent="." node_paths=PackedStringArray("label", "parent")]
 position = Vector2(807, -219)

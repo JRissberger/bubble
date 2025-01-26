@@ -9,7 +9,8 @@ var spd_mult:int;
 var radius:int;
 var playerCreated:bool; #bool
 var winner:bool; #bool
-
+#var activeSprites: Array = [];
+#array order is none, water, paint, soap, xenon, oxygen, helium, tadpoles, glitter, knife 
 var Atk:
 	get: 
 		return atk
@@ -34,6 +35,13 @@ var Radius:
 	set(value):
 		radius = value;
 
+#note: this retrieves/sets the ENTIRE array
+#var ActiveSprites:
+	#get:
+		#return activeSprites;
+	#set(value):
+		#activeSprites = value;
+
 
 func _init(hp:=5, spd_mult:=5, atk:=1, radius:=70):
 #func _init(hp, spd_mult, atk, radius):
@@ -44,6 +52,7 @@ func _init(hp:=5, spd_mult:=5, atk:=1, radius:=70):
 	self.radius = radius
 	self.playerCreated = false;
 	self.winner = false;
+	#self.activeSprites = [1,0,0,0,0,0,0,0,0,0];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

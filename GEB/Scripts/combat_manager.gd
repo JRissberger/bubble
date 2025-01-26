@@ -8,9 +8,12 @@ extends Node
 @export var label2 : Label;
 @export var parent : Node2D;
 
+#TODO: set up two arrays, getnode for all sprites of bubble1, bubble2
+var bubble1Sprites;
+var bubble2Sprites;
 #storing max hp for transfer from player to enemy bubble
 var bubbleMaxHp = 5;
-
+var bubble1ActiveSprites
 #prefab of the bubbles
 var bubblePrefab = preload("res://Prefabs/bubblePrefab.tscn");
 
@@ -26,6 +29,7 @@ func update():
 			BubbleManager.enemyhp = bubbleMaxHp; #store MAX hp not current
 			BubbleManager.enemySpd = bubble1.Spd_mult;
 			BubbleManager.enemyRadius = bubble1.Radius;
+			BubbleManager.enemySprites = bubble1.ActiveSprites;
 		else:
 			bubble2.winner = true;
 			popup.game_over(bubble2);
@@ -36,8 +40,10 @@ func update():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	#check if this is the first match
 	if(BubbleManager.bubbles.size() <= 1): BubbleManager.createEnemyBubble();
+	#bubble1ActiveSprites = BubbleManager.bubbles[0].ActiveSprites;
 	#make all relavent bubbles
 	#update; neither approaches to dynamically create bubbles work, 
 	#will simply adjust the stats of the two existing bubbles in the scene
@@ -77,10 +83,34 @@ func _ready() -> void:
 			bubble2.Hp = BubbleManager.enemyhp; #currentBubble.Hp;
 			bubble2.Spd_mult = BubbleManager.enemySpd; #currentBubble.Spd_mult;
 			bubble2.Radius = BubbleManager.enemyRadius; #currentBubble.Radius;
-			bubble2.playerCreated = false #currentBubble.playerCreated;
+			bubble2.playerCreated = false; #currentBubble.playerCreated;
+			#bubble2.ActiveSprites = BubbleManager.enemySprites;
 			bubble2.winner = currentBubble.winner;
 			bubble2.label.text = str("Health: ", bubble2.hp);
 			BubbleManager.bubbles[b] = bubble2;
+	
+	#assigning visible sprites
+	#retrieve BubbleManager.bubbles[0] sprite array
+	#var playerBubbleSprites = BubbleManager.bubbles[0].ActiveSprites;
+	#TODO: active sprites is resetting to default somewhere
+	
+	#gets references to all the sprites for bubble1
+	bubble1Sprites = [get_node("Bubble1/empty"), get_node("Bubble1/blue"), get_node("Bubble1/orange"), 
+	get_node("Bubble1/green"), get_node("Bubble1/xenon"),
+	get_node("Bubble1/oxygen"), get_node("Bubble1/helium"), get_node("Bubble1/tadpoles"), get_node("Bubble1/glitter"),
+	get_node("Bubble1/knife")];
+	#for loop, if sprite array is 1, sets corresponding sprite in bubble1 array to visible
+	#bubble1Sprites[3].visible = true;
+	for i in 10:
+		if BubbleManager.playerSprites[i] == 1:
+			bubble1Sprites[i].visible = true;
+	#for i in 10:
+		#if playerBubbleSprites[i] == 1:
+			#bubble1Sprites[i].visible = true;
+		#else:
+			#bubble1Sprites[i].visible = false;
+		#bubble1Sprites[i].visible = false;
+	#do the same for bubble2
 
 
 

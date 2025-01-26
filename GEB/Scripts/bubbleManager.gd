@@ -8,11 +8,16 @@ var opponentBubble:bubble = bubble.new(5, 5, 1, 70);
 #this approach would NOT get a good grade for coding standards my bad
 var currentObject = "none";
 
+#holds an array of what sprites need to be active when creating a bubble
+#has options for none, and the 3 options for each category. 
+var sprites = [1,0,0,0,0,0,0,0,0,0];
+var playerSprites = [1,0,0,0,0,0,0,0,0,0];
 #holding enemy stats since there's some issue with moving data around between class objects
 var enemyhp = 5;
 var enemySpd = 5;
 var enemyAtk = 1;
 var enemyRadius = 70;
+var enemySprites = [1,0,0,0,0,0,0,0,0,0,];
 
 #where all of the bubble objects will be stored
 var bubbles:Array = [];
@@ -38,6 +43,9 @@ func _ready():
 func createBubble():
 	#if(opponentBubble != null): 	BubbleManager.clearBubbles();
 	newBubble.playerCreated = true;
+	#newBubble.ActiveSprites = sprites;
+	playerSprites = sprites;
+	print(playerSprites);
 	#store the bubble into the list of bubbles we have on hand
 	bubbles.push_back(newBubble);
 	#resets trackers of what's been added
@@ -47,6 +55,7 @@ func createBubble():
 func resetBubble():
 	#clear the bubble
 	newBubble = bubble.new(5, 5, 1, 70);
+	sprites = [1,0,0,0,0,0,0,0,0,0];
 	gasAdded = false;
 	liquidAdded = false;
 	otherAdded = false;
