@@ -49,7 +49,7 @@ var Radius:
 		#activeSprites = value;
 
 
-func _init(hp:=5, spd_mult:=5, atk:=1, radius:=70):
+func _init(hp:=5, spd_mult:=15, atk:=1, radius:=70):
 #func _init(hp, spd_mult, atk, radius):
 	self.health = hp
 	self.spd_mult = spd_mult
