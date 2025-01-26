@@ -11,7 +11,7 @@ var glitterBowl;
 var knifeBowl;
 var bowlImages;
 
-var spd = 5;
+var spd = 10;
 var hp = 5;
 var atk = 4;
 
@@ -36,7 +36,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	#I apologize for the if statements this is gonna be messy
 	if BubbleManager.currentObject == "xenon" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		spd = spd + 20
+		spd = spd + 1
 		hp = hp - 1;
 		#BubbleManager.newBubble.hp -= 1;
 		BubbleManager.sprites[4] = 1;
@@ -44,7 +44,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	
 	if BubbleManager.currentObject == "oxygen" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		spd = spd + 25;
+		spd = spd + 2;
 		hp = hp - 2;
 		#BubbleManager.newBubble.hp -= 2;
 		BubbleManager.sprites[5] = 1;
@@ -52,7 +52,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	
 	if BubbleManager.currentObject == "helium" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		spd = spd + 30;
+		spd = spd + 3;
 		hp = hp - 3;
 		#BubbleManager.newBubble.hp -= 3;
 		BubbleManager.sprites[6] = 1;
@@ -92,7 +92,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		BubbleManager.otherAdded = true;
 		#BubbleManager.newBubble.atk += 1;
 		atk = atk + 1;
-		spd =  spd - 2;
+		spd =  spd - 1;
 		BubbleManager.sprites[7] = 1;
 		tadpoleBowl.visible = true;
 	
@@ -100,7 +100,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		BubbleManager.otherAdded = true;
 		#BubbleManager.newBubble.atk += 2;
 		atk = atk + 2;
-		spd = spd - 3;
+		spd = spd - 2;
 		BubbleManager.sprites[8] = 1;
 		glitterBowl.visible = true;
 	
@@ -108,7 +108,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		BubbleManager.otherAdded = true;
 		#BubbleManager.newBubble.atk += 3;
 		atk = atk + 3;
-		spd = spd - 5;
+		spd = spd - 3;
 		BubbleManager.sprites[9] = 1;
 		knifeBowl.visible = true;
 	
