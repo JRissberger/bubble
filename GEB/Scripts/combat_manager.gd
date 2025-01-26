@@ -8,8 +8,8 @@ extends Node
 
 func update():
 	if (bubble1.health <= 0 || bubble2.health <= 0):
-		bubble1.freeze
-		bubble2.freeze
+		bubble1.set_physics_process(false)
+		bubble2.set_physics_process(false)
 		if (bubble1.health > bubble2.health):
 			popup.game_over(bubble1)
 		else:
