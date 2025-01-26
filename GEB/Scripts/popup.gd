@@ -15,9 +15,10 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	#gets array size to access proper bubble data
 	arraySize = BubbleManager.bubbles.size();
-	#updates popup text
-	popupText.text = ("Health: " + str(BubbleManager.bubbles[arraySize-1].Hp) + "\nAttack: " + 
-	str(BubbleManager.bubbles[arraySize-1].Atk) + "\nSpeed: " + str(BubbleManager.bubbles[arraySize-1].Spd_mult)
-	+ "\n\n\nSelect BATTLE! to enter the arena!");
-	#displays popup
-	self.visible = true;
+	if arraySize > 0:
+			#updates popup text
+		popupText.text = ("Health: " + str(BubbleManager.bubbles[arraySize-1].Hp) + "\nAttack: " + 
+		str(BubbleManager.bubbles[arraySize-1].Atk) + "\nSpeed: " + str(BubbleManager.bubbles[arraySize-1].Spd_mult)
+		+ "\n\n\nSelect BATTLE! to enter the arena!");
+		#displays popup
+		self.visible = true;

@@ -209,6 +209,23 @@ position = Vector2(10, 8)
 scale = Vector2(0.251953, 0.25)
 texture = ExtResource("17_owrvl")
 
+[node name="AlreadyAdded" type="ColorRect" parent="Bowl"]
+visible = false
+offset_left = -179.0
+offset_top = -72.0
+offset_right = 185.0
+offset_bottom = 20.0
+color = Color(0, 0.227451, 0.239216, 1)
+
+[node name="Label" type="Label" parent="Bowl/AlreadyAdded"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 367.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 25
+text = "You've already added something of that category!"
+autowrap_mode = 2
+
 [node name="Water" type="Sprite2D" parent="."]
 position = Vector2(50, 112)
 scale = Vector2(0.25, 0.25)
@@ -408,9 +425,28 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 50
 text = "CREATE"
 
+[node name="addReminder" type="ColorRect" parent="Create"]
+visible = false
+layout_mode = 0
+offset_left = -471.0
+offset_top = -121.0
+offset_right = -51.0
+offset_bottom = -58.0
+color = Color(0, 0.227451, 0.239216, 1)
+
+[node name="Label" type="Label" parent="Create/addReminder"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 441.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 26
+text = "Add an item from each category!"
+autowrap_mode = 2
+
 [node name="Table" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(593, 325)
+position = Vector2(575, 323)
 scale = Vector2(1.01, 1)
 texture = ExtResource("29_b8jw7")
 

@@ -49,7 +49,7 @@ func resetBubble():
 	
 #creates a bubble via rng and adds to the list of bubbles
 func createEnemyBubble():
-	var atk = random.randi() % statUpperLimit + 1;
+	var atk = random.randi() % statUpperLimit - 10;
 	var hp = random.randi() % statUpperLimit + 1;
 	var spd_mult = random.randi() % statUpperLimit + 1;
 	var radius = random.randi() % radiusUpperLimit + 30;
