@@ -8,6 +8,9 @@ extends Node
 @export var label2 : Label;
 @export var parent : Node2D;
 
+#storing max hp for transfer from player to enemy bubble
+var bubbleMaxHp = 5;
+
 #prefab of the bubbles
 var bubblePrefab = preload("res://Prefabs/bubblePrefab.tscn");
 
@@ -18,9 +21,15 @@ func update():
 		if (bubble1.Hp > bubble2.Hp):
 			bubble1.winner = true;
 			popup.game_over(bubble1);
+			#updates stored stats for enemy bubble
+			BubbleManager.enemyAtk = bubble1.Atk;
+			BubbleManager.enemyhp = bubbleMaxHp; #store MAX hp not current
+			BubbleManager.enemySpd = bubble1.Spd_mult;
+			BubbleManager.enemyRadius = bubble1.Radius;
 		else:
 			bubble2.winner = true;
 			popup.game_over(bubble2);
+			
 			#make sure health stat is reflected accurately.
 		bubble1.label.text = str("Health: ", bubble1.hp);
 		bubble2.label.text = str("Health: ", bubble2.hp);
@@ -54,7 +63,7 @@ func _ready() -> void:
 			bubble1.playerCreated = currentBubble.playerCreated;
 			bubble1.winner = currentBubble.winner;
 			bubble1.label.text = str("Health: ", bubble1.hp);
-			
+			bubbleMaxHp = currentBubble.Hp; #records max hp at creation, used to create next round enemy if needed
 			#replace this bubble with what is in the bubble manager
 			BubbleManager.bubbles[b] = bubble1;
 		else: 
@@ -64,14 +73,13 @@ func _ready() -> void:
 			bubble2.label = label2;
 			bubble2.parent = parent;
 			#print(bubble2.Hp);
-			bubble2.Atk = currentBubble.Atk;
-			bubble2.Hp = currentBubble.Hp;
-			bubble2.Spd_mult = currentBubble.Spd_mult;
-			bubble2.Radius = currentBubble.Radius;
-			bubble2.playerCreated = currentBubble.playerCreated;
+			bubble2.Atk = BubbleManager.enemyAtk;#currentBubble.Atk;
+			bubble2.Hp = BubbleManager.enemyhp; #currentBubble.Hp;
+			bubble2.Spd_mult = BubbleManager.enemySpd; #currentBubble.Spd_mult;
+			bubble2.Radius = BubbleManager.enemyRadius; #currentBubble.Radius;
+			bubble2.playerCreated = false #currentBubble.playerCreated;
 			bubble2.winner = currentBubble.winner;
 			bubble2.label.text = str("Health: ", bubble2.hp);
-			
 			BubbleManager.bubbles[b] = bubble2;
 
 
