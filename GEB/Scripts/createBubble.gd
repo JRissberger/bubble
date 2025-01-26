@@ -14,13 +14,13 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	#only allows creation if one thing from each category has been added
-	if BubbleManager.gasAdded && BubbleManager.liquidAdded && BubbleManager.otherAdded:
-		#hides create button
-		self.visible = false;
-		#call the resetBubble function in bubble manager
-		BubbleManager.createBubble();
-	else:
-		popup.visible = true;
+	#if BubbleManager.gasAdded && BubbleManager.liquidAdded && BubbleManager.otherAdded:
+	#hides create button
+	self.visible = false;
+	#call the resetBubble function in bubble manager
+	BubbleManager.createBubble();
+	#else:
+		#popup.visible = true;
 
 func _input(event:InputEvent) -> void:
 	if event is InputEventMouseButton:

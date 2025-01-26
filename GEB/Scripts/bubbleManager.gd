@@ -8,6 +8,12 @@ var opponentBubble:bubble = bubble.new(5, 5, 1, 70);
 #this approach would NOT get a good grade for coding standards my bad
 var currentObject = "none";
 
+#holding enemy stats since there's some issue with moving data around between class objects
+var enemyhp = 5;
+var enemySpd = 5;
+var enemyAtk = 1;
+var enemyRadius = 70;
+
 #where all of the bubble objects will be stored
 var bubbles:Array = [];
 
@@ -30,7 +36,6 @@ func _ready():
 #add the new bubble and store it into the list of bubbles at hand; 
 #reset the newBubble variable to a fresh bubble
 func createBubble():
-	#TODO: do we want to check and make sure the player has added one of each type?
 	#if(opponentBubble != null): 	BubbleManager.clearBubbles();
 	newBubble.playerCreated = true;
 	#store the bubble into the list of bubbles we have on hand
@@ -49,10 +54,10 @@ func resetBubble():
 	
 #creates a bubble via rng and adds to the list of bubbles
 func createEnemyBubble():
-	var atk = random.randi() % statUpperLimit - 10;
-	var hp = random.randi() % statUpperLimit + 1;
-	var spd_mult = random.randi() % statUpperLimit + 1;
-	var radius = random.randi() % radiusUpperLimit + 30;
+	var atk = enemyAtk#random.randi() % statUpperLimit - 10;
+	var hp = enemyhp#random.randi() % statUpperLimit + 1;
+	var spd_mult = enemySpd#random.randi() % statUpperLimit + 1;
+	var radius = enemyRadius#random.randi() % radiusUpperLimit + 30;
 	opponentBubble = bubble.new(hp, spd_mult, atk, radius);
 	if(bubbles[0] == null): 
 		bubbles[0] = opponentBubble;
