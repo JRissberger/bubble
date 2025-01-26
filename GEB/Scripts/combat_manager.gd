@@ -18,16 +18,16 @@ var bubble1ActiveSprites
 var bubblePrefab = preload("res://Prefabs/bubblePrefab.tscn");
 
 func update():
-	if (bubble1.Hp <= 0 || bubble2.Hp <= 0):
+	if (bubble1.hp <= 0 || bubble2.hp <= 0):
 		bubble1.set_physics_process(false)
 		bubble2.set_physics_process(false)
-		if (bubble1.Hp > bubble2.Hp):
+		if (bubble1.hp > bubble2.hp):
 			bubble1.winner = true;
 			popup.game_over(bubble1);
 			#updates stored stats for enemy bubble
-			BubbleManager.enemyAtk = bubble1.Atk;
+			BubbleManager.enemyAtk = bubble1.atk;
 			BubbleManager.enemyhp = bubbleMaxHp; #store MAX hp not current
-			BubbleManager.enemySpd = bubble1.Spd_mult;
+			BubbleManager.enemySpd = bubble1.spd_mult;
 			BubbleManager.enemyRadius = bubble1.Radius;
 			BubbleManager.enemySprites = BubbleManager.playerSprites;
 		else:
@@ -62,14 +62,14 @@ func _ready() -> void:
 			bubble1.label = label1;
 			bubble1.parent = parent;
 			#print(bubble1.Hp);
-			bubble1.Atk = currentBubble.Atk;
-			bubble1.Hp = currentBubble.Hp;
-			bubble1.Spd_mult = currentBubble.Spd_mult;
+			bubble1.atk = currentBubble.atk;
+			bubble1.hp = currentBubble.hp;
+			bubble1.spd_mult = currentBubble.spd_mult;
 			bubble1.Radius = currentBubble.Radius;
 			bubble1.playerCreated = currentBubble.playerCreated;
 			bubble1.winner = currentBubble.winner;
 			bubble1.label.text = str("Health: ", bubble1.hp);
-			bubbleMaxHp = currentBubble.Hp; #records max hp at creation, used to create next round enemy if needed
+			bubbleMaxHp = currentBubble.hp; #records max hp at creation, used to create next round enemy if needed
 			#replace this bubble with what is in the bubble manager
 			BubbleManager.bubbles[b] = bubble1;
 		else: 
@@ -79,9 +79,9 @@ func _ready() -> void:
 			bubble2.label = label2;
 			bubble2.parent = parent;
 			#print(bubble2.Hp);
-			bubble2.Atk = BubbleManager.enemyAtk;#currentBubble.Atk;
-			bubble2.Hp = BubbleManager.enemyhp; #currentBubble.Hp;
-			bubble2.Spd_mult = BubbleManager.enemySpd; #currentBubble.Spd_mult;
+			bubble2.atk = BubbleManager.enemyAtk;#currentBubble.Atk;
+			bubble2.hp = BubbleManager.enemyhp; #currentBubble.Hp;
+			bubble2.spd_mult = BubbleManager.enemySpd; #currentBubble.Spd_mult;
 			bubble2.Radius = BubbleManager.enemyRadius; #currentBubble.Radius;
 			bubble2.playerCreated = false; #currentBubble.playerCreated;
 			#bubble2.ActiveSprites = BubbleManager.enemySprites;

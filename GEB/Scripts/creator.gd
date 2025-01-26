@@ -34,58 +34,58 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	#Flat adding to the stats so resetting is easier
 	if BubbleManager.currentObject == "xenon" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.Spd_mult = 10;
+		BubbleManager.newBubble.spd_mult = 10;
 		BubbleManager.sprites[4] = 1;
 		xenonBowl.visible = true;
 	
 	if BubbleManager.currentObject == "oxygen" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.Spd_mult = 13;
+		BubbleManager.newBubble.spd_mult = 13;
 		BubbleManager.sprites[5] = 1;
 		oxygenBowl.visible = true;
 	
 	if BubbleManager.currentObject == "helium" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
-		BubbleManager.newBubble.Spd_mult = 15;
+		BubbleManager.newBubble.spd_mult = 15;
 		BubbleManager.sprites[6] = 1;
 		heliumBowl.visible = true;
 	
 	if BubbleManager.currentObject == "water" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.newBubble.Hp = 6;
+		BubbleManager.newBubble.hp = 6;
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[1] = 1;
 		waterBowl.visible = true;
 	
 	if BubbleManager.currentObject == "paint" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.newBubble.Hp = 8;
+		BubbleManager.newBubble.hp = 8;
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[2] = 1;
 		paintBowl.visible = true;
 	
 	if BubbleManager.currentObject == "soap" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
-		BubbleManager.newBubble.Hp = 10;
+		BubbleManager.newBubble.hp = 10;
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[3] = 1;
 		soapBowl.visible = true;
 	
 	if BubbleManager.currentObject == "tadpoles" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.newBubble.Atk = 2;
+		BubbleManager.newBubble.atk = 2;
 		BubbleManager.sprites[7] = 1;
 		tadpoleBowl.visible = true;
 	
 	if BubbleManager.currentObject == "glitter" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.newBubble.Atk = 3;
+		BubbleManager.newBubble.atk = 3;
 		BubbleManager.sprites[8] = 1
 		glitterBowl.visible = true;
 	
 	if BubbleManager.currentObject == "knife" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
-		BubbleManager.newBubble.Atk = 4;
+		BubbleManager.newBubble.atk = 4;
 		BubbleManager.sprites[9] = 1
 		knifeBowl.visible = true;
 	

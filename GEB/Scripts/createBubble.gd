@@ -8,10 +8,6 @@ func _ready() -> void:
 	popup = get_node("addReminder");
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_button_pressed() -> void:
 	#only allows creation if one thing from each category has been added
 	#if BubbleManager.gasAdded && BubbleManager.liquidAdded && BubbleManager.otherAdded:
