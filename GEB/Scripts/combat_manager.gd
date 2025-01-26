@@ -16,11 +16,14 @@ var bubbleMaxHp = 5;
 var bubble1ActiveSprites
 #prefab of the bubbles
 var bubblePrefab = preload("res://Prefabs/bubblePrefab.tscn");
+var timer = 0;
 
 func update():
 	if (bubble1.hp <= 0 || bubble2.hp <= 0):
 		bubble1.set_physics_process(false)
 		bubble2.set_physics_process(false)
+		set_process(false);
+		
 		if (bubble1.hp > bubble2.hp):
 			bubble1.winner = true;
 			popup.game_over(bubble1);
@@ -35,8 +38,7 @@ func update():
 			popup.game_over(bubble2);
 			
 			#make sure health stat is reflected accurately.
-		bubble1.label.text = str("Health: ", bubble1.hp);
-		bubble2.label.text = str("Health: ", bubble2.hp);
+		
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -111,7 +113,26 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (timer > 0 && timer < 0.5):
+		timer += delta;
+	elif (timer > 0.5):
+		timer = 0;
+	elif (timer == 0):
+		if (bubble1.collis != null && bubble1.collis.get_collider().has_method("hit")):
+			bubble1.hit(bubble2.atk);
+			bubble2.hit(bubble1.atk);
+			
+			bubble1.label.text = str("Health: ", bubble1.hp);
+			bubble2.label.text = str("Health: ", bubble2.hp);
+			
+		elif (bubble2.collis != null && bubble2.collis.get_collider().has_method("hit")):
+			bubble1.hit(bubble2.atk);
+			bubble2.hit(bubble1.atk);
+			
+			bubble1.label.text = str("Health: ", bubble1.hp);
+			bubble2.label.text = str("Health: ", bubble2.hp);
+		update();
+		
 	
 #call this function when the win condition is met
 func endGame():

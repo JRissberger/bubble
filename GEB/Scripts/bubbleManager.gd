@@ -69,7 +69,7 @@ func createEnemyBubble():
 	var spd_mult = enemySpd#random.randi() % statUpperLimit + 1;
 	var radius = enemyRadius#random.randi() % radiusUpperLimit + 30;
 	opponentBubble = bubble.new(hp, spd_mult, atk, radius);
-	if(bubbles[0] == null): 
+	if(bubbles.size() == 0 || bubbles[0] == null): 
 		bubbles[0] = opponentBubble;
 	else: bubbles.push_back(opponentBubble);
 	

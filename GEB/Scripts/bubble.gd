@@ -23,6 +23,7 @@ var spd_mult:int;
 var radius:int;
 var playerCreated:bool; #bool
 var winner:bool; #bool
+var collis;
 #var activeSprites: Array = [];
 #array order is none, water, paint, soap, xenon, oxygen, helium, tadpoles, glitter, knife 
 var Spd_mult:
@@ -70,11 +71,6 @@ func hit(attack: int) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	apply_central_force(linear_velocity.normalized() * 0.02)
-	var collis = move_and_collide(linear_velocity * delta)
+	collis = move_and_collide(linear_velocity * delta)
 	if collis:
 		linear_velocity = linear_velocity.bounce(collis.get_normal())
-		if collis.get_collider().has_method("hit"):
-			collis.get_collider().hit(atk);
-			label.text = str("Health: ", hp);
-			#label.text = str(hp);
-			parent.update();
