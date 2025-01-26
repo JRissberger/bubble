@@ -58,7 +58,7 @@ func _ready() -> void:
 		if(currentBubble.playerCreated == true): 
 			#print(bubble1.Hp);
 			#bubble1 = currentBubble;
-			bubble1.title = "New";
+			bubble1.title = "You";
 			bubble1.label = label1;
 			bubble1.parent = parent;
 			#print(bubble1.Hp);
@@ -75,7 +75,7 @@ func _ready() -> void:
 		else: 
 			#print(bubble1.Hp);
 			#bubble2 = currentBubble;
-			bubble2.title = "Previous";
+			bubble2.title = "Enemy bubble";
 			bubble2.label = label2;
 			bubble2.parent = parent;
 			#print(bubble2.Hp);

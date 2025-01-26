@@ -47,7 +47,6 @@ func createBubble():
 	newBubble.playerCreated = true;
 	#newBubble.ActiveSprites = sprites;
 	playerSprites = sprites;
-	print(playerSprites);
 	#store the bubble into the list of bubbles we have on hand
 	bubbles.push_back(newBubble);
 	#resets trackers of what's been added

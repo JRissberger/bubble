@@ -9,6 +9,6 @@ func _ready() -> void:
 
 
 func game_over(winner) -> void:
-	popupText.text = str("Bubble ", winner.title, " won!")
+	popupText.text = str(winner.title, " won!")
 	#displays popup
 	self.visible = true;
