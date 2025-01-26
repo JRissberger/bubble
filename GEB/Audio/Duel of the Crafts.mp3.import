@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1q0swklgax6w"
+path="res://.godot/imported/Duel of the Crafts.mp3-aebf3d852625a0654ec22be7cd88a395.mp3str"
+
+[deps]
+
+source_file="res://Audio/Duel of the Crafts.mp3"
+dest_files=["res://.godot/imported/Duel of the Crafts.mp3-aebf3d852625a0654ec22be7cd88a395.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

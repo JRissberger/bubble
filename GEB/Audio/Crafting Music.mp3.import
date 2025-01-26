@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drus3wrme1vvl"
+path="res://.godot/imported/Crafting Music.mp3-282f45075176779e4df10d0992984f57.mp3str"
+
+[deps]
+
+source_file="res://Audio/Crafting Music.mp3"
+dest_files=["res://.godot/imported/Crafting Music.mp3-282f45075176779e4df10d0992984f57.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
