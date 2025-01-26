@@ -37,7 +37,7 @@ func makeBubble(bubbleX: bubble) -> RigidBody2D:
 	collider.shape = CircleShape2D.new(); #bubbles are round 
 	bubbleA.add_child(collider);
 	var sprite = Sprite2D.new(); #adjust the sprite on the bubble
-	sprite.texture = "none";
+	#sprite.texture = "none";
 	#sprite.texture = load("res"//Images//".png");
 	
 	return bubbleA;
