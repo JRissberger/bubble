@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://def1h6ai23y7t"]
+[gd_scene load_steps=47 format=3 uid="uid://def1h6ai23y7t"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/oxygen.gd" id="2_vu4ed"]
 [ext_resource type="Script" path="res://Scripts/Objects/xenon.gd" id="2_wf3ta"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dwpg4clss3ggy" path="res://Images/Table.png" id="29_b8jw7"]
 [ext_resource type="Script" path="res://Scripts/popup.gd" id="33_hwkv1"]
 [ext_resource type="Script" path="res://Scripts/toArena.gd" id="34_wa0rp"]
+[ext_resource type="AudioStream" uid="uid://drus3wrme1vvl" path="res://Audio/Crafting Music.mp3" id="35_wcm83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0as4c"]
 size = Vector2(188, 511.271)
@@ -492,6 +493,11 @@ text = "
 Select BATTLE! to enter the arena!
 "
 horizontal_alignment = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_wcm83")
+autoplay = true
+parameters/looping = false
 
 [connection signal="button_down" from="Oxygen/Button" to="Oxygen" method="_on_button_button_down"]
 [connection signal="button_up" from="Oxygen/Button" to="Oxygen" method="_on_button_button_up"]
