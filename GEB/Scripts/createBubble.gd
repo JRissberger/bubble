@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_pressed() -> void:
+	#hides create button
+	self.visible = false;
 	#call the resetBubble function in bubble manager
 	BubbleManager.createBubble();
 	
