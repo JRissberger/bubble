@@ -496,7 +496,7 @@ horizontal_alignment = 1
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("35_wcm83")
-volume_db = -30.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="button_down" from="Oxygen/Button" to="Oxygen" method="_on_button_button_down"]

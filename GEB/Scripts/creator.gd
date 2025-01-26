@@ -14,6 +14,8 @@ var bowlImages;
 var spd = 10;
 var hp = 5;
 var atk = 4;
+#sound effects
+var sound_player := AudioStreamPlayer.new();
 
 #display for if an element is added of a category already filled
 var popUp;
@@ -41,6 +43,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		#BubbleManager.newBubble.hp -= 1;
 		BubbleManager.sprites[4] = 1;
 		xenonBowl.visible = true;
+		var sound_effect = load("res://Audio/Gas 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "oxygen" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
@@ -49,6 +54,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		#BubbleManager.newBubble.hp -= 2;
 		BubbleManager.sprites[5] = 1;
 		oxygenBowl.visible = true;
+		var sound_effect = load("res://Audio/Gas 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "helium" && !BubbleManager.gasAdded:
 		BubbleManager.gasAdded = true;
@@ -57,6 +65,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		#BubbleManager.newBubble.hp -= 3;
 		BubbleManager.sprites[6] = 1;
 		heliumBowl.visible = true;
+		var sound_effect = load("res://Audio/Gas 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "water" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
@@ -67,6 +78,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[1] = 1;
 		waterBowl.visible = true;
+		var sound_effect = load("res://Audio/Splash 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "paint" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
@@ -77,6 +91,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[2] = 1;
 		paintBowl.visible = true;
+		var sound_effect = load("res://Audio/Splash 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "soap" && !BubbleManager.liquidAdded:
 		BubbleManager.liquidAdded = true;
@@ -87,6 +104,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		BubbleManager.sprites[0] = 0;
 		BubbleManager.sprites[3] = 1;
 		soapBowl.visible = true;
+		var sound_effect = load("res://Audio/Splash 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "tadpoles" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
@@ -95,6 +115,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		spd =  spd - 1;
 		BubbleManager.sprites[7] = 1;
 		tadpoleBowl.visible = true;
+		var sound_effect = load("res://Audio/Splash 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "glitter" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
@@ -103,6 +126,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		spd = spd - 2;
 		BubbleManager.sprites[8] = 1;
 		glitterBowl.visible = true;
+		var sound_effect = load("res://Audio/Gas 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	if BubbleManager.currentObject == "knife" && !BubbleManager.otherAdded:
 		BubbleManager.otherAdded = true;
@@ -111,6 +137,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		spd = spd - 3;
 		BubbleManager.sprites[9] = 1;
 		knifeBowl.visible = true;
+		var sound_effect = load("res://Audio/Clang 01a.mp3");
+		sound_player.stream = sound_effect;
+		sound_player.play();
 	
 	BubbleManager.newBubble.atk = atk;
 	BubbleManager.newBubble.spd_mult = spd;
