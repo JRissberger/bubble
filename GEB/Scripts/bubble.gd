@@ -1,5 +1,7 @@
 class_name bubble extends RigidBody2D
 @export var label: Label
+@export var parent: Node2D
+@export var title: String
 var atk
 var health
 var hp
@@ -53,6 +55,4 @@ func _physics_process(delta: float) -> void:
 		if collis.get_collider().has_method("hit"):
 			collis.get_collider().hit(atk)
 			label.text = str("Health: ", health)
-		if health <= 0:
-			get_node
-		
+			parent.update()
