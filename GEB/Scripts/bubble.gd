@@ -16,6 +16,8 @@ var Atk:
 		return atk
 	set(value):
 		atk = value
+		if atk <= 0:
+			atk = 1;
 var Hp:
 	get: 
 		return hp;
@@ -23,11 +25,15 @@ var Hp:
 	set(value):
 		hp = value
 		health = value;
+		if health <= 0:
+			health = 1;
 var Spd_mult:
 	get: 
 		return spd_mult
 	set(value):
-		spd_mult = value	
+		spd_mult = value
+		if spd_mult <= 0:
+			spd_mult = 1;
 		
 var Radius:
 	get:

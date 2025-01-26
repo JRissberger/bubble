@@ -234,6 +234,7 @@ offset_right = 1154.0
 offset_bottom = 46.0
 
 [node name="Popup" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
